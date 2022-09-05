@@ -1,6 +1,6 @@
 ---
 title: "note02"
-output: html_notebook
+output: github_document
 ---
 
 # 2 몇 가지 기본 사항
