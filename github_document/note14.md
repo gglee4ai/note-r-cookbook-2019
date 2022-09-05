@@ -833,14 +833,11 @@ library(forecast)
 library(fpp2)
 ```
 
-    ## ── Attaching packages ────────────────────────────────────── fpp2 2.4 ──
+    ## ── Attaching packages ───────────────────────────────────────────────────────────────────────────── fpp2 2.4 ──
 
     ## ✔ fma       2.4     ✔ expsmooth 2.3
 
-    ## ── Conflicts ───────────────────────────────────────── fpp2_conflicts ──
-    ## ✖ flextable::compose()  masks purrr::compose()
-    ## ✖ magrittr::extract()   masks tidyr::extract()
-    ## ✖ magrittr::set_names() masks purrr::set_names()
+    ## 
 
 ``` r
 plot(ausbeer)
@@ -1115,8 +1112,7 @@ library(fUnitRoots)
 adfTest(coredata(ts1), type = "nc")
 ```
 
-    ## Warning in adfTest(coredata(ts1), type = "nc"): p-value smaller than
-    ## printed p-value
+    ## Warning in adfTest(coredata(ts1), type = "nc"): p-value smaller than printed p-value
 
     ## 
     ## Title:
@@ -1131,7 +1127,7 @@ adfTest(coredata(ts1), type = "nc")
     ##     0.01 
     ## 
     ## Description:
-    ##  Mon Sep  5 14:31:15 2022 by user:
+    ##  Mon Sep  5 15:48:46 2022 by user:
 
 ## 14.24 시계열 평활화
 

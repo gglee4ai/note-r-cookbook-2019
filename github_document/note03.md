@@ -33,17 +33,16 @@ history()
 rnorm(10)
 ```
 
-    ##  [1] -1.3294890 -1.0050848 -0.3630562  0.4787996  0.1983774 -0.4779540
-    ##  [7]  1.3097053  1.6835446 -1.0392848 -0.6980353
+    ##  [1]  1.8228095 -0.2643788  2.0204190  0.0732640  2.1486045  0.4515201  0.6816636  0.1872521  0.8280608
+    ## [10] -1.4915543
 
 ``` r
 x <- .Last.value
 x
 ```
 
-    ##  [1] "note02.Rmd" "note03.Rmd" "note04.Rmd" "note05.Rmd" "note06.Rmd"
-    ##  [6] "note07.Rmd" "note08.Rmd" "note09.Rmd" "note10.Rmd" "note11.Rmd"
-    ## [11] "note12.Rmd" "note13.Rmd" "note14.Rmd" "note15.Rmd" "note16.Rmd"
+    ##  [1] "note02.Rmd" "note03.Rmd" "note04.Rmd" "note05.Rmd" "note06.Rmd" "note07.Rmd" "note08.Rmd" "note09.Rmd"
+    ##  [9] "note10.Rmd" "note11.Rmd" "note12.Rmd" "note13.Rmd" "note14.Rmd" "note15.Rmd" "note16.Rmd"
 
 ## 3.6 검색 경로를 통해 로드된 패키지 표시
 
@@ -51,14 +50,10 @@ x
 search()
 ```
 
-    ##  [1] ".GlobalEnv"         "package:rmarkdown"  "package:flextable" 
-    ##  [4] "package:forcats"    "package:stringr"    "package:dplyr"     
-    ##  [7] "package:purrr"      "package:readr"      "package:tidyr"     
-    ## [10] "package:tibble"     "package:tidyverse"  "package:kableExtra"
-    ## [13] "package:knitr"      "package:ggplot2"    "tools:rstudio"     
-    ## [16] "package:stats"      "package:graphics"   "package:grDevices" 
-    ## [19] "package:utils"      "package:datasets"   "package:methods"   
-    ## [22] "Autoloads"          "org:r-lib"          "package:base"
+    ##  [1] ".GlobalEnv"        "package:forcats"   "package:stringr"   "package:dplyr"     "package:purrr"    
+    ##  [6] "package:readr"     "package:tidyr"     "package:tibble"    "package:ggplot2"   "package:tidyverse"
+    ## [11] "tools:rstudio"     "package:stats"     "package:graphics"  "package:grDevices" "package:utils"    
+    ## [16] "package:datasets"  "package:methods"   "Autoloads"         "org:r-lib"         "package:base"
 
 ## 3.7 설치된 패키지 목록 보기
 

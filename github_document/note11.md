@@ -1,6 +1,24 @@
 note11
 ================
 
+``` r
+library(tidyverse)
+```
+
+    ## ── Attaching packages ────────────────────────────────────────────────────────────────────── tidyverse 1.3.2 ──
+    ## ✔ ggplot2 3.3.6      ✔ purrr   0.3.4 
+    ## ✔ tibble  3.1.8      ✔ dplyr   1.0.10
+    ## ✔ tidyr   1.2.0      ✔ stringr 1.4.1 
+    ## ✔ readr   2.1.2      ✔ forcats 0.5.2 
+    ## ── Conflicts ───────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+    ## ✖ dplyr::filter() masks stats::filter()
+    ## ✖ dplyr::lag()    masks stats::lag()
+
+``` r
+library(broom)
+library(faraway)
+```
+
 # 11 선형 회귀 및 분산 분석
 
 ## 11.1 단순 선형 회귀 수행하기
@@ -120,40 +138,30 @@ confint(m)
 resid(m)
 ```
 
-    ##           1           2           3           4           5           6 
-    ## -0.56747105  2.28803716  0.09719916  2.14740500 -0.71688199 -0.36171794 
-    ##           7           8           9          10          11          12 
-    ##  1.03495927  2.80400382 -4.24963443 -0.20484262 -0.64673080 -2.57715137 
-    ##          13          14          15          16          17          18 
-    ## -2.93387274 -1.93302285  1.78001250 -1.43998837 -2.39887037  0.92448198 
-    ##          19          20          21          22          23          24 
-    ## -3.36631495  2.68902334 -1.41903066  0.78712300  0.03550952 -0.38058349 
-    ##          25          26          27          28          29          30 
-    ##  5.04594297 -2.50106882  3.45163338  0.33710226 -2.70985131 -0.07610591 
-    ##          31          32          33          34          35          36 
-    ##  2.02608607 -1.39023547 -2.70405128  0.39534037  2.72010944 -0.02540898 
-    ##          37          38          39          40          41          42 
-    ## -3.98866378 -3.90109157 -1.94580315 -1.77007062 -0.26135548  2.09770391 
-    ##          43          44          45          46          47          48 
-    ## -1.39859792 -3.19102607  1.84391208  0.82178224  3.62728794 -5.38322002 
-    ##          49          50          51          52          53          54 
-    ##  0.29046722  3.78783896  1.91936090 -2.41061043  1.68549007 -2.79641208 
-    ##          55          56          57          58          59          60 
-    ## -1.33479747  3.35493092 -1.15246322  2.40117746 -0.53197500 -4.94341180 
-    ##          61          62          63          64          65          66 
-    ## -2.48991423 -3.27182922 -1.61611118 -1.51194409 -0.44932034 -0.98689884 
-    ##          67          68          69          70          71          72 
-    ##  5.62731823 -4.46257657 -1.75679992  0.80989421  5.03204632  0.16886524 
-    ##          73          74          75          76          77          78 
-    ##  3.57606086 -4.86679075  4.27809940 -2.13863250 -0.97390956 -3.63799681 
-    ##          79          80          81          82          83          84 
-    ##  0.57878900  5.56644767  6.98402323 -3.51188419  1.28423254  4.14446484 
-    ##          85          86          87          88          89          90 
-    ## -0.46300546 -0.78667310 -0.75653327  1.63836456  3.75781677  1.89415984 
-    ##          91          92          93          94          95          96 
-    ##  0.55421813 -0.86617701  1.20412400 -1.74009673 -0.72614713  3.27014630 
-    ##          97          98          99         100 
-    ##  1.40115444  0.94762951 -0.91404098  2.42783988
+    ##           1           2           3           4           5           6           7           8           9 
+    ## -0.56747105  2.28803716  0.09719916  2.14740500 -0.71688199 -0.36171794  1.03495927  2.80400382 -4.24963443 
+    ##          10          11          12          13          14          15          16          17          18 
+    ## -0.20484262 -0.64673080 -2.57715137 -2.93387274 -1.93302285  1.78001250 -1.43998837 -2.39887037  0.92448198 
+    ##          19          20          21          22          23          24          25          26          27 
+    ## -3.36631495  2.68902334 -1.41903066  0.78712300  0.03550952 -0.38058349  5.04594297 -2.50106882  3.45163338 
+    ##          28          29          30          31          32          33          34          35          36 
+    ##  0.33710226 -2.70985131 -0.07610591  2.02608607 -1.39023547 -2.70405128  0.39534037  2.72010944 -0.02540898 
+    ##          37          38          39          40          41          42          43          44          45 
+    ## -3.98866378 -3.90109157 -1.94580315 -1.77007062 -0.26135548  2.09770391 -1.39859792 -3.19102607  1.84391208 
+    ##          46          47          48          49          50          51          52          53          54 
+    ##  0.82178224  3.62728794 -5.38322002  0.29046722  3.78783896  1.91936090 -2.41061043  1.68549007 -2.79641208 
+    ##          55          56          57          58          59          60          61          62          63 
+    ## -1.33479747  3.35493092 -1.15246322  2.40117746 -0.53197500 -4.94341180 -2.48991423 -3.27182922 -1.61611118 
+    ##          64          65          66          67          68          69          70          71          72 
+    ## -1.51194409 -0.44932034 -0.98689884  5.62731823 -4.46257657 -1.75679992  0.80989421  5.03204632  0.16886524 
+    ##          73          74          75          76          77          78          79          80          81 
+    ##  3.57606086 -4.86679075  4.27809940 -2.13863250 -0.97390956 -3.63799681  0.57878900  5.56644767  6.98402323 
+    ##          82          83          84          85          86          87          88          89          90 
+    ## -3.51188419  1.28423254  4.14446484 -0.46300546 -0.78667310 -0.75653327  1.63836456  3.75781677  1.89415984 
+    ##          91          92          93          94          95          96          97          98          99 
+    ##  0.55421813 -0.86617701  1.20412400 -1.74009673 -0.72614713  3.27014630  1.40115444  0.94762951 -0.91404098 
+    ##         100 
+    ##  2.42783988
 
 ``` r
 deviance(m)
@@ -254,17 +262,42 @@ confint(m2)
 ## 11.6 종속 변수와 상관관계가 높은 변수만 회귀
 
 ``` r
-library(tidyverse)
 load("./data/pred.rdata")
+```
+
+``` r
 best_pred <-
-  pred %>%
-  select(-resp) %>%
+  as_tibble(pred) %>%
+  select(-resp) |> 
   map_dbl(cor, y = pred$resp) %>%
   sort(decreasing = TRUE) %>%
   .[1:4] %>%
   names() %>%
   pred[.]
+best_pred
 ```
+
+    ##         pred4       pred3      pred6       pred1
+    ## 1   7.2517934  1.51270701  0.5599457  0.20599860
+    ## 2   2.0764368  0.25792144 -0.1243682 -0.36105730
+    ## 3  -0.6494477  0.08844023  0.6567396  0.75816324
+    ## 4   1.3648958 -0.12089654  0.1219251 -0.72670483
+    ## 5  -5.4440890 -1.19432890 -0.3910749 -1.36828104
+    ## 6   2.5535014  0.61199690  1.2731020  0.43281803
+    ## 7  -1.2908153 -0.21713985 -0.1461930 -0.81139318
+    ## 8  -0.8533770 -0.18275671  1.0054661  1.44410126
+    ## 9   3.9215783  0.93334633  0.6327082 -0.43144620
+    ## 10  3.4062534  0.82177311  0.2996397  0.65564788
+    ## 11  5.5433730  1.39211638  0.6179090  0.32192527
+    ## 12 -1.7966230 -0.47617392 -0.3357590 -0.78383894
+    ## 13  2.1159590  0.65034856  1.0655218  1.57572752
+    ## 14  5.0602247  1.39111046  0.8067272  0.64289931
+    ## 15 -6.1042546 -1.11078888  0.3379459  0.08976065
+    ## 16 -3.8255041 -0.86079259  1.1949684  0.27655075
+    ## 17 -5.0396050 -1.13173868  0.5991480  0.67928882
+    ## 18 -3.1349650 -1.45921400  0.3283319  0.08983289
+    ## 19 -1.0421860  0.07998255 -0.6481138 -2.99309008
+    ## 20  2.7500736  0.65320434  0.1142573  0.28488295
 
 ``` r
 mod <- lm(pred$resp ~ as.matrix(best_pred))
@@ -661,13 +694,13 @@ t <- df_decay$time
 plot(t, z)
 ```
 
-![](note11_files/figure-gfm/unnamed-chunk-33-1.png)<!-- -->
+![](note11_files/figure-gfm/unnamed-chunk-35-1.png)<!-- -->
 
 ``` r
 plot(t, log(z))
 ```
 
-![](note11_files/figure-gfm/unnamed-chunk-33-2.png)<!-- -->
+![](note11_files/figure-gfm/unnamed-chunk-35-2.png)<!-- -->
 
 ``` r
 m <- lm(log(z) ~ t)
@@ -696,21 +729,6 @@ summary(m)
 ## 11.13 최적의 전력 변환 찾기(Box-Cox 절차)
 
 ``` r
-library(MASS)
-```
-
-    ## 
-    ## Attaching package: 'MASS'
-
-    ## The following object is masked from 'package:patchwork':
-    ## 
-    ##     area
-
-    ## The following object is masked from 'package:dplyr':
-    ## 
-    ##     select
-
-``` r
 set.seed(9)
 x <- 10:100
 eps <- rnorm(length(x), sd = 5)
@@ -721,7 +739,7 @@ y <- (x + eps)^(-1 / 1.5)
 plot(x, y)
 ```
 
-![](note11_files/figure-gfm/unnamed-chunk-37-1.png)<!-- -->
+![](note11_files/figure-gfm/unnamed-chunk-38-1.png)<!-- -->
 
 ``` r
 m <- lm(y ~ x)
@@ -748,33 +766,31 @@ summary(m)
     ## F-statistic: 159.2 on 1 and 89 DF,  p-value: < 2.2e-16
 
 ``` r
-library(broom)
 augmented_m <- augment(m)
 augmented_m %>%
   ggplot(aes(.fitted, .resid)) +
   geom_point()
 ```
 
-![](note11_files/figure-gfm/unnamed-chunk-39-1.png)<!-- -->
+![](note11_files/figure-gfm/unnamed-chunk-40-1.png)<!-- -->
 
 ``` r
 plot(m)
 ```
 
-![](note11_files/figure-gfm/unnamed-chunk-40-1.png)<!-- -->![](note11_files/figure-gfm/unnamed-chunk-40-2.png)<!-- -->![](note11_files/figure-gfm/unnamed-chunk-40-3.png)<!-- -->![](note11_files/figure-gfm/unnamed-chunk-40-4.png)<!-- -->
+![](note11_files/figure-gfm/unnamed-chunk-41-1.png)<!-- -->![](note11_files/figure-gfm/unnamed-chunk-41-2.png)<!-- -->![](note11_files/figure-gfm/unnamed-chunk-41-3.png)<!-- -->![](note11_files/figure-gfm/unnamed-chunk-41-4.png)<!-- -->
 
 ``` r
 plot(m, which = 1)
 ```
 
-![](note11_files/figure-gfm/unnamed-chunk-41-1.png)<!-- -->
+![](note11_files/figure-gfm/unnamed-chunk-42-1.png)<!-- -->
 
 ``` r
-library(MASS)
-bc <- boxcox(m)
+bc <- MASS::boxcox(m)
 ```
 
-![](note11_files/figure-gfm/unnamed-chunk-42-1.png)<!-- -->
+![](note11_files/figure-gfm/unnamed-chunk-43-1.png)<!-- -->
 
 ``` r
 lambda <- bc$x[which.max(bc$y)]
@@ -819,7 +835,7 @@ augmented_m2 %>%
   geom_point()
 ```
 
-![](note11_files/figure-gfm/unnamed-chunk-46-1.png)<!-- -->
+![](note11_files/figure-gfm/unnamed-chunk-47-1.png)<!-- -->
 
 ## 11.14 회귀 계수에 대한 신뢰 구간 형성
 
@@ -853,7 +869,7 @@ augmented_m %>%
   geom_point()
 ```
 
-![](note11_files/figure-gfm/unnamed-chunk-49-1.png)<!-- -->
+![](note11_files/figure-gfm/unnamed-chunk-50-1.png)<!-- -->
 
 ## 11.16 선형 회귀 진단하기
 
@@ -862,7 +878,7 @@ m <- lm(y ~ x1 + x2)
 plot(m)
 ```
 
-![](note11_files/figure-gfm/unnamed-chunk-50-1.png)<!-- -->![](note11_files/figure-gfm/unnamed-chunk-50-2.png)<!-- -->![](note11_files/figure-gfm/unnamed-chunk-50-3.png)<!-- -->![](note11_files/figure-gfm/unnamed-chunk-50-4.png)<!-- -->
+![](note11_files/figure-gfm/unnamed-chunk-51-1.png)<!-- -->![](note11_files/figure-gfm/unnamed-chunk-51-2.png)<!-- -->![](note11_files/figure-gfm/unnamed-chunk-51-3.png)<!-- -->![](note11_files/figure-gfm/unnamed-chunk-51-4.png)<!-- -->
 
 ``` r
 car::outlierTest(m)
@@ -878,7 +894,7 @@ par(mfrow = c(2, 2))
 plot(m)
 ```
 
-![](note11_files/figure-gfm/unnamed-chunk-52-1.png)<!-- -->
+![](note11_files/figure-gfm/unnamed-chunk-53-1.png)<!-- -->
 
 ``` r
 load(file = "./data/bad.rdata")
@@ -887,7 +903,7 @@ par(mfrow = (c(2, 2))) # this gives us a 2x2 plot
 plot(m)
 ```
 
-![](note11_files/figure-gfm/unnamed-chunk-53-1.png)<!-- -->
+![](note11_files/figure-gfm/unnamed-chunk-54-1.png)<!-- -->
 
 ``` r
 car::outlierTest(m)
@@ -969,7 +985,7 @@ lmtest::dwtest(m1)
 acf(resid(m1))
 ```
 
-![](note11_files/figure-gfm/unnamed-chunk-58-1.png)<!-- -->
+![](note11_files/figure-gfm/unnamed-chunk-59-1.png)<!-- -->
 
 ``` r
 m2 <- lm(y2 ~ x)
@@ -987,7 +1003,7 @@ lmtest::dwtest(m2)
 acf(resid(m2))
 ```
 
-![](note11_files/figure-gfm/unnamed-chunk-60-1.png)<!-- -->
+![](note11_files/figure-gfm/unnamed-chunk-61-1.png)<!-- -->
 
 ``` r
 lmtest::dwtest(m2, alternative = "two.sided")
@@ -1042,8 +1058,7 @@ predict(m, newdata = preds, interval = "prediction")
 month.abb
 ```
 
-    ##  [1] "Jan" "Feb" "Mar" "Apr" "May" "Jun" "Jul" "Aug" "Sep" "Oct" "Nov"
-    ## [12] "Dec"
+    ##  [1] "Jan" "Feb" "Mar" "Apr" "May" "Jun" "Jul" "Aug" "Sep" "Oct" "Nov" "Dec"
 
 ``` r
 load("./data/anova.rdata")
@@ -1055,7 +1070,7 @@ GSPC_df %>%
   geom_point()
 ```
 
-![](note11_files/figure-gfm/unnamed-chunk-66-1.png)<!-- -->
+![](note11_files/figure-gfm/unnamed-chunk-67-1.png)<!-- -->
 
 ``` r
 oneway.test(r ~ mon, data = GSPC_df)
@@ -1075,8 +1090,7 @@ oneway.test(r ~ mon, data = GSPC_df, subset = tail(seq_along(r), 2500))
     ##  One-way analysis of means (not assuming equal variances)
     ## 
     ## data:  r and mon
-    ## F = 0.67758, num df = 11.00, denom df = 976.29, p-value =
-    ## 0.7608
+    ## F = 0.67758, num df = 11.00, denom df = 976.29, p-value = 0.7608
 
 ``` r
 oneway.test(r ~ mon, data = GSPC_df, subset = tail(seq_along(r), 2500), var.equal = TRUE)
@@ -1102,12 +1116,11 @@ summary(m)
 ## 11.22 교호 작용도 만들기
 
 ``` r
-library(faraway)
 data(rats)
 interaction.plot(rats$poison, rats$treat, rats$time)
 ```
 
-![](note11_files/figure-gfm/unnamed-chunk-71-1.png)<!-- -->
+![](note11_files/figure-gfm/unnamed-chunk-72-1.png)<!-- -->
 
 ## 11.23 그룹 평균 간의 차이 찾기
 
@@ -1149,7 +1162,7 @@ TukeyHSD(m)
 plot(TukeyHSD(m))
 ```
 
-![](note11_files/figure-gfm/unnamed-chunk-74-1.png)<!-- -->
+![](note11_files/figure-gfm/unnamed-chunk-75-1.png)<!-- -->
 
 ## 11.24 강력한 ANOVA 수행(Kruskal-Wallis 검정)
 
@@ -1172,13 +1185,12 @@ student_data
     ##  9 3          0.956   1     4    
     ## 10 2          0.647   0.727 4    
     ## # … with 84 more rows
-    ## # ℹ Use `print(n = ...)` to see more rows
 
 ``` r
 hist(student_data$midterm)
 ```
 
-![](note11_files/figure-gfm/unnamed-chunk-76-1.png)<!-- -->
+![](note11_files/figure-gfm/unnamed-chunk-77-1.png)<!-- -->
 
 ``` r
 kruskal.test(midterm ~ hw, data = student_data)
@@ -1188,8 +1200,7 @@ kruskal.test(midterm ~ hw, data = student_data)
     ##  Kruskal-Wallis rank sum test
     ## 
     ## data:  midterm by hw
-    ## Kruskal-Wallis chi-squared = 25.681, df = 4, p-value =
-    ## 3.669e-05
+    ## Kruskal-Wallis chi-squared = 25.681, df = 4, p-value = 3.669e-05
 
 ## 11.25 ANOVA를 이용한 모델 비교
 

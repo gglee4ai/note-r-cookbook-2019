@@ -184,15 +184,14 @@ safe_read
     ##         stop("Terminated by user", call. = FALSE)
     ##     })
     ## }
-    ## <bytecode: 0x17fd9d640>
-    ## <environment: 0x17fd9c488>
+    ## <bytecode: 0x1206a7628>
+    ## <environment: 0x1206a28d0>
 
 ``` r
 details <- safe_read("details.csv")
 ```
 
-    ## Warning in file(file, "rt"): cannot open file 'details.csv': No such
-    ## file or directory
+    ## Warning in file(file, "rt"): cannot open file 'details.csv': No such file or directory
 
 ``` r
 if (is.null(details)) {

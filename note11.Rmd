@@ -1,7 +1,15 @@
 ---
 title: "note11"
-output: html_notebook
+output: github_document
 ---
+
+
+```{r}
+library(tidyverse)
+library(broom)
+library(faraway)
+```
+
 
 # 11 선형 회귀 및 분산 분석
 
@@ -96,16 +104,19 @@ confint(m2)
 ## 11.6 종속 변수와 상관관계가 높은 변수만 회귀
 
 ```{r}
-library(tidyverse)
 load("./data/pred.rdata")
+```
+
+```{r}
 best_pred <-
-  pred %>%
-  select(-resp) %>%
+  as_tibble(pred) %>%
+  select(-resp) |> 
   map_dbl(cor, y = pred$resp) %>%
   sort(decreasing = TRUE) %>%
   .[1:4] %>%
   names() %>%
   pred[.]
+best_pred
 ```
 
 ```{r}
@@ -222,10 +233,6 @@ summary(m)
 ## 11.13 최적의 전력 변환 찾기(Box-Cox 절차)
 
 ```{r}
-library(MASS)
-```
-
-```{r}
 set.seed(9)
 x <- 10:100
 eps <- rnorm(length(x), sd = 5)
@@ -242,7 +249,6 @@ summary(m)
 ```
 
 ```{r}
-library(broom)
 augmented_m <- augment(m)
 augmented_m %>%
   ggplot(aes(.fitted, .resid)) +
@@ -258,8 +264,7 @@ plot(m, which = 1)
 ```
 
 ```{r}
-library(MASS)
-bc <- boxcox(m)
+bc <- MASS::boxcox(m)
 ```
 
 ```{r}
@@ -427,7 +432,6 @@ summary(m)
 ## 11.22 교호 작용도 만들기
 
 ```{r}
-library(faraway)
 data(rats)
 interaction.plot(rats$poison, rats$treat, rats$time)
 ```

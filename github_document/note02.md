@@ -116,55 +116,25 @@ f <- function(n, p) sqrt(p * (1 - p) / n)
 ls()
 ```
 
-    ##  [1] "a"            "cars"         "f"            "fib"         
-    ##  [5] "files"        "filtered_mpg" "foo"          "fs"          
-    ##  [9] "fum"          "mpg"          "n"            "selected_mpg"
-    ## [13] "temp1"        "temp2"        "total"        "v"           
-    ## [17] "v1"           "v2"           "v3"           "w"           
-    ## [21] "x"            "y"            "years"        "z"
+    ## [1] "f"   "fib" "foo" "fum" "x"   "y"   "z"
 
 ``` r
 ls.str()
 ```
 
-    ## a :  num 3
-    ## cars : 'data.frame': 50 obs. of  2 variables:
-    ##  $ speed: num  4 4 7 7 8 9 10 10 10 11 ...
-    ##  $ dist : num  2 10 4 22 16 10 18 26 34 17 ...
     ## f : function (n, p)  
     ## fib :  num [1:10] 0 1 1 2 3 5 8 13 21 34
-    ## files :  chr [1:39] "arith.R" "data" "g1.png" "hello.R" "note_files" ...
-    ## filtered_mpg : tibble [22 × 11] (S3: tbl_df/tbl/data.frame)
     ## foo :  num 3
-    ## fs :  chr [1:15] "note02.Rmd" "note03.Rmd" "note04.Rmd" "note05.Rmd" ...
     ## fum :  num 5
-    ## mpg : tibble [234 × 11] (S3: tbl_df/tbl/data.frame)
-    ## n :  num 5
-    ## selected_mpg : tibble [22 × 2] (S3: tbl_df/tbl/data.frame)
-    ## temp1 : tibble [22 × 11] (S3: tbl_df/tbl/data.frame)
-    ## temp2 : tibble [3 × 11] (S3: tbl_df/tbl/data.frame)
-    ## total :  num 6
-    ## v :  num 0
-    ## v1 :  num [1:3] 1 2 3
-    ## v2 :  num [1:3] 4 5 6
-    ## v3 :  chr [1:3] "A" "B" "C"
-    ## w :  int [1:5] 1 2 3 4 5
     ## x :  num 10
     ## y :  num 50
-    ## years :  Named num [1:4] 1960 1964 1976 1994
     ## z :  chr [1:3] "thee" "blind" "mice"
 
 ``` r
 ls(all.names = TRUE)
 ```
 
-    ##  [1] ".Random.seed" "a"            "cars"         "f"           
-    ##  [5] "fib"          "files"        "filtered_mpg" "foo"         
-    ##  [9] "fs"           "fum"          "mpg"          "n"           
-    ## [13] "selected_mpg" "temp1"        "temp2"        "total"       
-    ## [17] "v"            "v1"           "v2"           "v3"          
-    ## [21] "w"            "x"            "y"            "years"       
-    ## [25] "z"
+    ## [1] "f"   "fib" "foo" "fum" "x"   "y"   "z"
 
 ## 2.4 변수 삭제
 
@@ -198,8 +168,7 @@ c(1 * pi, 2 * pi, 3 * pi, 4 * pi)
 c("My", "twitter", "handle", "is", "@cmastication")
 ```
 
-    ## [1] "My"            "twitter"       "handle"        "is"           
-    ## [5] "@cmastication"
+    ## [1] "My"            "twitter"       "handle"        "is"            "@cmastication"
 
 ``` r
 c(TRUE, TRUE, FALSE, TRUE)
@@ -811,6 +780,18 @@ n <- 10
 
 ``` r
 library(tidyverse)
+```
+
+    ## ── Attaching packages ────────────────────────────────────────────────────────────────────── tidyverse 1.3.2 ──
+    ## ✔ ggplot2 3.3.6     ✔ purrr   0.3.4
+    ## ✔ tibble  3.1.8     ✔ dplyr   1.0.9
+    ## ✔ tidyr   1.2.0     ✔ stringr 1.4.0
+    ## ✔ readr   2.1.2     ✔ forcats 0.5.1
+    ## ── Conflicts ───────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+    ## ✖ dplyr::filter() masks stats::filter()
+    ## ✖ dplyr::lag()    masks stats::lag()
+
+``` r
 data(mpg)
 ```
 
@@ -822,12 +803,11 @@ mpg %>%
 ```
 
     ## # A tibble: 3 × 11
-    ##   manufact…¹ model displ  year   cyl trans drv     cty   hwy fl    class
-    ##   <chr>      <chr> <dbl> <int> <int> <chr> <chr> <int> <int> <chr> <chr>
-    ## 1 chevrolet  mali…   2.4  2008     4 auto… f        22    30 r     mids…
-    ## 2 honda      civic   1.6  1999     4 manu… f        28    33 r     subc…
-    ## 3 honda      civic   1.6  1999     4 auto… f        24    32 r     subc…
-    ## # … with abbreviated variable name ¹​manufacturer
+    ##   manufacturer model  displ  year   cyl trans      drv     cty   hwy fl    class     
+    ##   <chr>        <chr>  <dbl> <int> <int> <chr>      <chr> <int> <int> <chr> <chr>     
+    ## 1 chevrolet    malibu   2.4  2008     4 auto(l4)   f        22    30 r     midsize   
+    ## 2 honda        civic    1.6  1999     4 manual(m5) f        28    33 r     subcompact
+    ## 3 honda        civic    1.6  1999     4 auto(l4)   f        24    32 r     subcompact
 
 ``` r
 temp1 <- filter(mpg, cty > 21)
@@ -836,12 +816,11 @@ print(temp2)
 ```
 
     ## # A tibble: 3 × 11
-    ##   manufact…¹ model displ  year   cyl trans drv     cty   hwy fl    class
-    ##   <chr>      <chr> <dbl> <int> <int> <chr> <chr> <int> <int> <chr> <chr>
-    ## 1 chevrolet  mali…   2.4  2008     4 auto… f        22    30 r     mids…
-    ## 2 honda      civic   1.6  1999     4 manu… f        28    33 r     subc…
-    ## 3 honda      civic   1.6  1999     4 auto… f        24    32 r     subc…
-    ## # … with abbreviated variable name ¹​manufacturer
+    ##   manufacturer model  displ  year   cyl trans      drv     cty   hwy fl    class     
+    ##   <chr>        <chr>  <dbl> <int> <int> <chr>      <chr> <int> <int> <chr> <chr>     
+    ## 1 chevrolet    malibu   2.4  2008     4 auto(l4)   f        22    30 r     midsize   
+    ## 2 honda        civic    1.6  1999     4 manual(m5) f        28    33 r     subcompact
+    ## 3 honda        civic    1.6  1999     4 auto(l4)   f        24    32 r     subcompact
 
 ``` r
 filtered_mpg <- filter(mpg, cty > 21)
@@ -915,7 +894,7 @@ ls
     ##     }
     ##     else all.names
     ## }
-    ## <bytecode: 0x142d48310>
+    ## <bytecode: 0x117733f10>
     ## <environment: namespace:base>
 
 ``` r

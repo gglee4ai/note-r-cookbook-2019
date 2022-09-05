@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style type="text/css">
+@font-face {
+font-family: octicons-link;
+src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAZwABAAAAAACFQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEU0lHAAAGaAAAAAgAAAAIAAAAAUdTVUIAAAZcAAAACgAAAAoAAQAAT1MvMgAAAyQAAABJAAAAYFYEU3RjbWFwAAADcAAAAEUAAACAAJThvmN2dCAAAATkAAAABAAAAAQAAAAAZnBnbQAAA7gAAACyAAABCUM+8IhnYXNwAAAGTAAAABAAAAAQABoAI2dseWYAAAFsAAABPAAAAZwcEq9taGVhZAAAAsgAAAA0AAAANgh4a91oaGVhAAADCAAAABoAAAAkCA8DRGhtdHgAAAL8AAAADAAAAAwGAACfbG9jYQAAAsAAAAAIAAAACABiATBtYXhwAAACqAAAABgAAAAgAA8ASm5hbWUAAAToAAABQgAAAlXu73sOcG9zdAAABiwAAAAeAAAAME3QpOBwcmVwAAAEbAAAAHYAAAB/aFGpk3jaTY6xa8JAGMW/O62BDi0tJLYQincXEypYIiGJjSgHniQ6umTsUEyLm5BV6NDBP8Tpts6F0v+k/0an2i+itHDw3v2+9+DBKTzsJNnWJNTgHEy4BgG3EMI9DCEDOGEXzDADU5hBKMIgNPZqoD3SilVaXZCER3/I7AtxEJLtzzuZfI+VVkprxTlXShWKb3TBecG11rwoNlmmn1P2WYcJczl32etSpKnziC7lQyWe1smVPy/Lt7Kc+0vWY/gAgIIEqAN9we0pwKXreiMasxvabDQMM4riO+qxM2ogwDGOZTXxwxDiycQIcoYFBLj5K3EIaSctAq2kTYiw+ymhce7vwM9jSqO8JyVd5RH9gyTt2+J/yUmYlIR0s04n6+7Vm1ozezUeLEaUjhaDSuXHwVRgvLJn1tQ7xiuVv/ocTRF42mNgZGBgYGbwZOBiAAFGJBIMAAizAFoAAABiAGIAznjaY2BkYGAA4in8zwXi+W2+MjCzMIDApSwvXzC97Z4Ig8N/BxYGZgcgl52BCSQKAA3jCV8CAABfAAAAAAQAAEB42mNgZGBg4f3vACQZQABIMjKgAmYAKEgBXgAAeNpjYGY6wTiBgZWBg2kmUxoDA4MPhGZMYzBi1AHygVLYQUCaawqDA4PChxhmh/8ODDEsvAwHgMKMIDnGL0x7gJQCAwMAJd4MFwAAAHjaY2BgYGaA4DAGRgYQkAHyGMF8NgYrIM3JIAGVYYDT+AEjAwuDFpBmA9KMDEwMCh9i/v8H8sH0/4dQc1iAmAkALaUKLgAAAHjaTY9LDsIgEIbtgqHUPpDi3gPoBVyRTmTddOmqTXThEXqrob2gQ1FjwpDvfwCBdmdXC5AVKFu3e5MfNFJ29KTQT48Ob9/lqYwOGZxeUelN2U2R6+cArgtCJpauW7UQBqnFkUsjAY/kOU1cP+DAgvxwn1chZDwUbd6CFimGXwzwF6tPbFIcjEl+vvmM/byA48e6tWrKArm4ZJlCbdsrxksL1AwWn/yBSJKpYbq8AXaaTb8AAHja28jAwOC00ZrBeQNDQOWO//sdBBgYGRiYWYAEELEwMTE4uzo5Zzo5b2BxdnFOcALxNjA6b2ByTswC8jYwg0VlNuoCTWAMqNzMzsoK1rEhNqByEyerg5PMJlYuVueETKcd/89uBpnpvIEVomeHLoMsAAe1Id4AAAAAAAB42oWQT07CQBTGv0JBhagk7HQzKxca2sJCE1hDt4QF+9JOS0nbaaYDCQfwCJ7Au3AHj+LO13FMmm6cl7785vven0kBjHCBhfpYuNa5Ph1c0e2Xu3jEvWG7UdPDLZ4N92nOm+EBXuAbHmIMSRMs+4aUEd4Nd3CHD8NdvOLTsA2GL8M9PODbcL+hD7C1xoaHeLJSEao0FEW14ckxC+TU8TxvsY6X0eLPmRhry2WVioLpkrbp84LLQPGI7c6sOiUzpWIWS5GzlSgUzzLBSikOPFTOXqly7rqx0Z1Q5BAIoZBSFihQYQOOBEdkCOgXTOHA07HAGjGWiIjaPZNW13/+lm6S9FT7rLHFJ6fQbkATOG1j2OFMucKJJsxIVfQORl+9Jyda6Sl1dUYhSCm1dyClfoeDve4qMYdLEbfqHf3O/AdDumsjAAB42mNgYoAAZQYjBmyAGYQZmdhL8zLdDEydARfoAqIAAAABAAMABwAKABMAB///AA8AAQAAAAAAAAAAAAAAAAABAAAAAA==) format('woff');
+}
+body {
+-webkit-text-size-adjust: 100%;
+text-size-adjust: 100%;
+color: #333;
+font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+font-size: 16px;
+line-height: 1.6;
+word-wrap: break-word;
+}
+a {
+background-color: transparent;
+}
+a:active,
+a:hover {
+outline: 0;
+}
+strong {
+font-weight: bold;
+}
+h1 {
+font-size: 2em;
+margin: 0.67em 0;
+}
+img {
+border: 0;
+}
+hr {
+box-sizing: content-box;
+height: 0;
+}
+pre {
+overflow: auto;
+}
+code,
+kbd,
+pre {
+font-family: monospace, monospace;
+font-size: 1em;
+}
+input {
+color: inherit;
+font: inherit;
+margin: 0;
+}
+html input[disabled] {
+cursor: default;
+}
+input {
+line-height: normal;
+}
+input[type="checkbox"] {
+box-sizing: border-box;
+padding: 0;
+}
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+td,
+th {
+padding: 0;
+}
+* {
+box-sizing: border-box;
+}
+input {
+font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+a {
+color: #4078c0;
+text-decoration: none;
+}
+a:hover,
+a:active {
+text-decoration: underline;
+}
+hr {
+height: 0;
+margin: 15px 0;
+overflow: hidden;
+background: transparent;
+border: 0;
+border-bottom: 1px solid #ddd;
+}
+hr:before {
+display: table;
+content: "";
+}
+hr:after {
+display: table;
+clear: both;
+content: "";
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin-top: 15px;
+margin-bottom: 15px;
+line-height: 1.1;
+}
+h1 {
+font-size: 30px;
+}
+h2 {
+font-size: 21px;
+}
+h3 {
+font-size: 16px;
+}
+h4 {
+font-size: 14px;
+}
+h5 {
+font-size: 12px;
+}
+h6 {
+font-size: 11px;
+}
+blockquote {
+margin: 0;
+}
+ul,
+ol {
+padding: 0;
+margin-top: 0;
+margin-bottom: 0;
+}
+ol ol,
+ul ol {
+list-style-type: lower-roman;
+}
+ul ul ol,
+ul ol ol,
+ol ul ol,
+ol ol ol {
+list-style-type: lower-alpha;
+}
+dd {
+margin-left: 0;
+}
+code {
+font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+font-size: 12px;
+}
+pre {
+margin-top: 0;
+margin-bottom: 0;
+font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+.select::-ms-expand {
+opacity: 0;
+}
+.octicon {
+font: normal normal normal 16px/1 octicons-link;
+display: inline-block;
+text-decoration: none;
+text-rendering: auto;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+.octicon-link:before {
+content: '\f05c';
+}
+.markdown-body:before {
+display: table;
+content: "";
+}
+.markdown-body:after {
+display: table;
+clear: both;
+content: "";
+}
+.markdown-body>*:first-child {
+margin-top: 0 !important;
+}
+.markdown-body>*:last-child {
+margin-bottom: 0 !important;
+}
+a:not([href]) {
+color: inherit;
+text-decoration: none;
+}
+.anchor {
+display: inline-block;
+padding-right: 2px;
+margin-left: -18px;
+}
+.anchor:focus {
+outline: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin-top: 1em;
+margin-bottom: 16px;
+font-weight: bold;
+line-height: 1.4;
+}
+h1 .octicon-link,
+h2 .octicon-link,
+h3 .octicon-link,
+h4 .octicon-link,
+h5 .octicon-link,
+h6 .octicon-link {
+color: #000;
+vertical-align: middle;
+visibility: hidden;
+}
+h1:hover .anchor,
+h2:hover .anchor,
+h3:hover .anchor,
+h4:hover .anchor,
+h5:hover .anchor,
+h6:hover .anchor {
+text-decoration: none;
+}
+h1:hover .anchor .octicon-link,
+h2:hover .anchor .octicon-link,
+h3:hover .anchor .octicon-link,
+h4:hover .anchor .octicon-link,
+h5:hover .anchor .octicon-link,
+h6:hover .anchor .octicon-link {
+visibility: visible;
+}
+h1 {
+padding-bottom: 0.3em;
+font-size: 2.25em;
+line-height: 1.2;
+border-bottom: 1px solid #eee;
+}
+h1 .anchor {
+line-height: 1;
+}
+h2 {
+padding-bottom: 0.3em;
+font-size: 1.75em;
+line-height: 1.225;
+border-bottom: 1px solid #eee;
+}
+h2 .anchor {
+line-height: 1;
+}
+h3 {
+font-size: 1.5em;
+line-height: 1.43;
+}
+h3 .anchor {
+line-height: 1.2;
+}
+h4 {
+font-size: 1.25em;
+}
+h4 .anchor {
+line-height: 1.2;
+}
+h5 {
+font-size: 1em;
+}
+h5 .anchor {
+line-height: 1.1;
+}
+h6 {
+font-size: 1em;
+color: #777;
+}
+h6 .anchor {
+line-height: 1.1;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table,
+pre {
+margin-top: 0;
+margin-bottom: 16px;
+}
+hr {
+height: 4px;
+padding: 0;
+margin: 16px 0;
+background-color: #e7e7e7;
+border: 0 none;
+}
+ul,
+ol {
+padding-left: 2em;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+margin-top: 0;
+margin-bottom: 0;
+}
+li>p {
+margin-top: 16px;
+}
+dl {
+padding: 0;
+}
+dl dt {
+padding: 0;
+margin-top: 16px;
+font-size: 1em;
+font-style: italic;
+font-weight: bold;
+}
+dl dd {
+padding: 0 16px;
+margin-bottom: 16px;
+}
+blockquote {
+padding: 0 15px;
+color: #777;
+border-left: 4px solid #ddd;
+}
+blockquote>:first-child {
+margin-top: 0;
+}
+blockquote>:last-child {
+margin-bottom: 0;
+}
+table {
+display: block;
+width: 100%;
+overflow: auto;
+word-break: normal;
+word-break: keep-all;
+}
+table th {
+font-weight: bold;
+}
+table th,
+table td {
+padding: 6px 13px;
+border: 1px solid #ddd;
+}
+table tr {
+background-color: #fff;
+border-top: 1px solid #ccc;
+}
+table tr:nth-child(2n) {
+background-color: #f8f8f8;
+}
+img {
+max-width: 100%;
+box-sizing: content-box;
+background-color: #fff;
+}
+code {
+padding: 0;
+padding-top: 0.2em;
+padding-bottom: 0.2em;
+margin: 0;
+font-size: 85%;
+background-color: rgba(0,0,0,0.04);
+border-radius: 3px;
+}
+code:before,
+code:after {
+letter-spacing: -0.2em;
+content: "\00a0";
+}
+pre>code {
+padding: 0;
+margin: 0;
+font-size: 100%;
+word-break: normal;
+white-space: pre;
+background: transparent;
+border: 0;
+}
+.highlight {
+margin-bottom: 16px;
+}
+.highlight pre,
+pre {
+padding: 16px;
+overflow: auto;
+font-size: 85%;
+line-height: 1.45;
+background-color: #f7f7f7;
+border-radius: 3px;
+}
+.highlight pre {
+margin-bottom: 0;
+word-break: normal;
+}
+pre {
+word-wrap: normal;
+}
+pre code {
+display: inline;
+max-width: initial;
+padding: 0;
+margin: 0;
+overflow: initial;
+line-height: inherit;
+word-wrap: normal;
+background-color: transparent;
+border: 0;
+}
+pre code:before,
+pre code:after {
+content: normal;
+}
+kbd {
+display: inline-block;
+padding: 3px 5px;
+font-size: 11px;
+line-height: 10px;
+color: #555;
+vertical-align: middle;
+background-color: #fcfcfc;
+border: solid 1px #ccc;
+border-bottom-color: #bbb;
+border-radius: 3px;
+box-shadow: inset 0 -1px 0 #bbb;
+}
+.pl-c {
+color: #969896;
+}
+.pl-c1,
+.pl-s .pl-v {
+color: #0086b3;
+}
+.pl-e,
+.pl-en {
+color: #795da3;
+}
+.pl-s .pl-s1,
+.pl-smi {
+color: #333;
+}
+.pl-ent {
+color: #63a35c;
+}
+.pl-k {
+color: #a71d5d;
+}
+.pl-pds,
+.pl-s,
+.pl-s .pl-pse .pl-s1,
+.pl-sr,
+.pl-sr .pl-cce,
+.pl-sr .pl-sra,
+.pl-sr .pl-sre {
+color: #183691;
+}
+.pl-v {
+color: #ed6a43;
+}
+.pl-id {
+color: #b52a1d;
+}
+.pl-ii {
+background-color: #b52a1d;
+color: #f8f8f8;
+}
+.pl-sr .pl-cce {
+color: #63a35c;
+font-weight: bold;
+}
+.pl-ml {
+color: #693a17;
+}
+.pl-mh,
+.pl-mh .pl-en,
+.pl-ms {
+color: #1d3e81;
+font-weight: bold;
+}
+.pl-mq {
+color: #008080;
+}
+.pl-mi {
+color: #333;
+font-style: italic;
+}
+.pl-mb {
+color: #333;
+font-weight: bold;
+}
+.pl-md {
+background-color: #ffecec;
+color: #bd2c00;
+}
+.pl-mi1 {
+background-color: #eaffea;
+color: #55a532;
+}
+.pl-mdr {
+color: #795da3;
+font-weight: bold;
+}
+.pl-mo {
+color: #1d3e81;
+}
+kbd {
+display: inline-block;
+padding: 3px 5px;
+font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+line-height: 10px;
+color: #555;
+vertical-align: middle;
+background-color: #fcfcfc;
+border: solid 1px #ccc;
+border-bottom-color: #bbb;
+border-radius: 3px;
+box-shadow: inset 0 -1px 0 #bbb;
+}
+.task-list-item {
+list-style-type: none;
+}
+.task-list-item+.task-list-item {
+margin-top: 3px;
+}
+.task-list-item input {
+margin: 0 0.35em 0.25em -1.6em;
+vertical-align: middle;
+}
+:checked+.radio-label {
+z-index: 1;
+position: relative;
+border-color: #4078c0;
+}
+.sourceLine {
+display: inline-block;
+}
+code .kw { color: #000000; }
+code .dt { color: #ed6a43; }
+code .dv { color: #009999; }
+code .bn { color: #009999; }
+code .fl { color: #009999; }
+code .ch { color: #009999; }
+code .st { color: #183691; }
+code .co { color: #969896; }
+code .ot { color: #0086b3; }
+code .al { color: #a61717; }
+code .fu { color: #63a35c; }
+code .er { color: #a61717; background-color: #e3d2d2; }
+code .wa { color: #000000; }
+code .cn { color: #008080; }
+code .sc { color: #008080; }
+code .vs { color: #183691; }
+code .ss { color: #183691; }
+code .im { color: #000000; }
+code .va {color: #008080; }
+code .cf { color: #000000; }
+code .op { color: #000000; }
+code .bu { color: #000000; }
+code .ex { color: #000000; }
+code .pp { color: #999999; }
+code .at { color: #008080; }
+code .do { color: #969896; }
+code .an { color: #008080; }
+code .cv { color: #008080; }
+code .in { color: #008080; }
+</style>
+<style>
+body {
+  box-sizing: border-box;
+  min-width: 200px;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 45px;
+  padding-top: 0px;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="note12">note12</h1>
+<h1 id="id_12-가지-유용한-트릭">12 가지 유용한 트릭</h1>
+<h2 id="id_121-데이터-엿보기">12.1 데이터 엿보기</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="at">file =</span> <span class="st">&quot;./data/lab_df.rdata&quot;</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(lab_df)</span></code></pre></div>
+<pre><code>##             x lab          y
+## 1  0.07613317  NJ  1.6212870
+## 2  1.41494855  KY 10.3377301
+## 3  2.51757643  KY 14.2844286
+## 4 -0.30426377  KY  0.5992972
+## 5  2.39156565  KY 13.0913340
+## 6  2.06024789  NJ 16.3205385</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(lab_df)</span></code></pre></div>
+<pre><code>##              x lab          y
+## 195  7.3532639  KY 38.8804138
+## 196 -0.7417428  KY -0.2979567
+## 197  2.1155183  NJ 11.6294607
+## 198  1.6058650  KY  9.4077103
+## 199 -0.5230353  KY -1.0887942
+## 200  0.6751149  KY  5.8083875</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(lab_df)</span></code></pre></div>
+<h2 id="id_122-할당-결과-인쇄">12.2 할당 결과 인쇄</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">/</span> pi</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>(x <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">/</span> pi)</span></code></pre></div>
+<pre><code>## [1] 0.3183099</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="at">file =</span> <span class="st">&quot;./data/daily.prod.rdata&quot;</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>daily.prod</span></code></pre></div>
+<pre><code>##     Widgets Gadgets Thingys
+## Mon     179     167     182
+## Tue     153     193     166
+## Wed     183     190     170
+## Thu     153     161     171
+## Fri     154     181     186</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colSums</span>(daily.prod)</span></code></pre></div>
+<pre><code>## Widgets Gadgets Thingys 
+##     822     892     875</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rowSums</span>(daily.prod)</span></code></pre></div>
+<pre><code>## Mon Tue Wed Thu Fri 
+## 528 512 543 485 521</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rbind</span>(daily.prod, <span class="at">Totals =</span> <span class="fu">colSums</span>(daily.prod))</span></code></pre></div>
+<pre><code>##        Widgets Gadgets Thingys
+## Mon        179     167     182
+## Tue        153     193     166
+## Wed        183     190     170
+## Thu        153     161     171
+## Fri        154     181     186
+## Totals     822     892     875</code></pre>
+<h2 id="id_123-행과-열-합산">12.3 행과 열 합산</h2>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="at">file =</span> <span class="st">&#39;./data/daily.prod.rdata&#39;</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>daily.prod</span></code></pre></div>
+<pre><code>##     Widgets Gadgets Thingys
+## Mon     179     167     182
+## Tue     153     193     166
+## Wed     183     190     170
+## Thu     153     161     171
+## Fri     154     181     186</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colSums</span>(daily.prod)</span></code></pre></div>
+<pre><code>## Widgets Gadgets Thingys 
+##     822     892     875</code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rowSums</span>(daily.prod)</span></code></pre></div>
+<pre><code>## Mon Tue Wed Thu Fri 
+## 528 512 543 485 521</code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rbind</span>(daily.prod, <span class="at">Totals=</span><span class="fu">colSums</span>(daily.prod))</span></code></pre></div>
+<pre><code>##        Widgets Gadgets Thingys
+## Mon        179     167     182
+## Tue        153     193     166
+## Wed        183     190     170
+## Thu        153     161     171
+## Fri        154     181     186
+## Totals     822     892     875</code></pre>
+<h2 id="id_124-열에-데이터-인쇄하기">12.4 열에 데이터 인쇄하기</h2>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="at">file =</span> <span class="st">&quot;./data/xy.rdata&quot;</span>)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span></code></pre></div>
+<pre><code>##  [1] -0.6264538  0.1836433 -0.8356286  1.5952808  0.3295078 -0.8204684  0.4874291  0.7383247  0.5757814
+## [10] -0.3053884</code></pre>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(y)</span></code></pre></div>
+<pre><code>##  [1]  1.51178117  0.38984324 -0.62124058 -2.21469989  1.12493092 -0.04493361 -0.01619026  0.94383621
+##  [9]  0.82122120  0.59390132</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cbind</span>(x, y, <span class="at">Total =</span> x <span class="sc">+</span> y)</span></code></pre></div>
+<pre><code>##                x           y      Total
+##  [1,] -0.6264538  1.51178117  0.8853274
+##  [2,]  0.1836433  0.38984324  0.5734866
+##  [3,] -0.8356286 -0.62124058 -1.4568692
+##  [4,]  1.5952808 -2.21469989 -0.6194191
+##  [5,]  0.3295078  1.12493092  1.4544387
+##  [6,] -0.8204684 -0.04493361 -0.8654020
+##  [7,]  0.4874291 -0.01619026  0.4712388
+##  [8,]  0.7383247  0.94383621  1.6821609
+##  [9,]  0.5757814  0.82122120  1.3970025
+## [10,] -0.3053884  0.59390132  0.2885129</code></pre>
+<h2 id="id_125-데이터-비닝">12.5 데이터 비닝</h2>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>breaks <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">3</span>, <span class="sc">-</span><span class="dv">2</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="fu">cut</span>(x, breaks)</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(f)</span></code></pre></div>
+<pre><code>## (-3,-2] (-2,-1]  (-1,0]   (0,1]   (1,2]   (2,3]    NA&#39;s 
+##      20     134     320     375     131      19       1</code></pre>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="fu">cut</span>(x, breaks, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Bottom&quot;</span>, <span class="st">&quot;Low&quot;</span>, <span class="st">&quot;Neg&quot;</span>, <span class="st">&quot;Pos&quot;</span>, <span class="st">&quot;High&quot;</span>, <span class="st">&quot;Top&quot;</span>))</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(f)</span></code></pre></div>
+<pre><code>## Bottom    Low    Neg    Pos   High    Top   NA&#39;s 
+##     20    134    320    375    131     19      1</code></pre>
+<h2 id="id_126-특정-값의-위치-찾기">12.6 특정 값의 위치 찾기</h2>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>vec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">90</span>, <span class="dv">80</span>, <span class="dv">70</span>, <span class="dv">60</span>, <span class="dv">50</span>, <span class="dv">40</span>, <span class="dv">30</span>, <span class="dv">20</span>, <span class="dv">10</span>)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">match</span>(<span class="dv">80</span>, vec)</span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">which.min</span>(vec)</span></code></pre></div>
+<pre><code>## [1] 10</code></pre>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">which.max</span>(vec)</span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<h2 id="id_127-벡터의-모든-n번째-요소-선택하기">12.7 벡터의 모든 n번째
+요소 선택하기</h2>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">10</span>)</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>v[<span class="fu">seq_along</span>(v) <span class="sc">%%</span> n <span class="sc">==</span> <span class="dv">0</span>]</span></code></pre></div>
+<pre><code>## [1]  1.7111994  1.3218111  0.1465995 -0.7848352 -1.2215102</code></pre>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>v[<span class="fu">c</span>(<span class="cn">FALSE</span>, <span class="cn">TRUE</span>)]</span></code></pre></div>
+<pre><code>## [1]  1.7111994  1.3218111  0.1465995 -0.7848352 -1.2215102</code></pre>
+<h2 id="id_128-최소값-또는-최대값-찾기">12.8 최소값 또는 최대값
+찾기</h2>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pmin</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">5</span><span class="sc">:</span><span class="dv">1</span>)</span></code></pre></div>
+<pre><code>## [1] 1 2 3 2 1</code></pre>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pmax</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">5</span><span class="sc">:</span><span class="dv">1</span>)</span></code></pre></div>
+<pre><code>## [1] 5 4 3 4 5</code></pre>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">3</span><span class="sc">:</span><span class="dv">3</span>)</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pmax</span>(v, <span class="dv">0</span>)</span></code></pre></div>
+<pre><code>## [1] 0 0 0 0 1 2 3</code></pre>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">a =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">8</span>),</span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">b =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">7</span>),</span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">c =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">4</span>, <span class="dv">9</span>)</span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div>
+<pre><code>##   a b c
+## 1 1 2 0
+## 2 5 3 4
+## 3 8 7 9</code></pre>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">max_val =</span> <span class="fu">pmax</span>(a, b, c))</span></code></pre></div>
+<pre><code>##   a b c max_val
+## 1 1 2 0       2
+## 2 5 3 4       5
+## 3 8 7 9       9</code></pre>
+<h2 id="id_129-여러-변수의-모든-조합-생성">12.9 여러 변수의 모든 조합
+생성</h2>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>sides <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Heads&quot;</span>, <span class="st">&quot;Tails&quot;</span>)</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>faces <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;1 pip&quot;</span>, <span class="fu">paste</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">6</span>, <span class="st">&quot;pips&quot;</span>))</span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>sides</span></code></pre></div>
+<pre><code>## [1] &quot;Heads&quot; &quot;Tails&quot;</code></pre>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>faces</span></code></pre></div>
+<pre><code>## [1] &quot;1 pip&quot;  &quot;2 pips&quot; &quot;3 pips&quot; &quot;4 pips&quot; &quot;5 pips&quot; &quot;6 pips&quot;</code></pre>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">expand.grid</span>(faces, sides)</span></code></pre></div>
+<pre><code>##      Var1  Var2
+## 1   1 pip Heads
+## 2  2 pips Heads
+## 3  3 pips Heads
+## 4  4 pips Heads
+## 5  5 pips Heads
+## 6  6 pips Heads
+## 7   1 pip Tails
+## 8  2 pips Tails
+## 9  3 pips Tails
+## 10 4 pips Tails
+## 11 5 pips Tails
+## 12 6 pips Tails</code></pre>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">expand.grid</span>(faces, faces)</span></code></pre></div>
+<pre><code>##      Var1   Var2
+## 1   1 pip  1 pip
+## 2  2 pips  1 pip
+## 3  3 pips  1 pip
+## 4  4 pips  1 pip
+## 5  5 pips  1 pip
+## 6  6 pips  1 pip
+## 7   1 pip 2 pips
+## 8  2 pips 2 pips
+## 9  3 pips 2 pips
+## 10 4 pips 2 pips
+## 11 5 pips 2 pips
+## 12 6 pips 2 pips
+## 13  1 pip 3 pips
+## 14 2 pips 3 pips
+## 15 3 pips 3 pips
+## 16 4 pips 3 pips
+## 17 5 pips 3 pips
+## 18 6 pips 3 pips
+## 19  1 pip 4 pips
+## 20 2 pips 4 pips
+## 21 3 pips 4 pips
+## 22 4 pips 4 pips
+## 23 5 pips 4 pips
+## 24 6 pips 4 pips
+## 25  1 pip 5 pips
+## 26 2 pips 5 pips
+## 27 3 pips 5 pips
+## 28 4 pips 5 pips
+## 29 5 pips 5 pips
+## 30 6 pips 5 pips
+## 31  1 pip 6 pips
+## 32 2 pips 6 pips
+## 33 3 pips 6 pips
+## 34 4 pips 6 pips
+## 35 5 pips 6 pips
+## 36 6 pips 6 pips</code></pre>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">expand_grid</span>(faces, faces)</span></code></pre></div>
+<pre><code>## # A tibble: 36 × 2
+##    faces...1 faces...2
+##    &lt;chr&gt;     &lt;chr&gt;    
+##  1 1 pip     1 pip    
+##  2 1 pip     2 pips   
+##  3 1 pip     3 pips   
+##  4 1 pip     4 pips   
+##  5 1 pip     5 pips   
+##  6 1 pip     6 pips   
+##  7 2 pips    1 pip    
+##  8 2 pips    2 pips   
+##  9 2 pips    3 pips   
+## 10 2 pips    4 pips   
+## # … with 26 more rows</code></pre>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>?expand_grid</span></code></pre></div>
+<h2 id="id_1210-데이터-프레임-병합하기">12.10 데이터 프레임
+병합하기</h2>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="at">file =</span> <span class="st">&quot;./data/daily.prod.rdata&quot;</span>)</span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>daily.prod</span></code></pre></div>
+<pre><code>##     Widgets Gadgets Thingys
+## Mon     179     167     182
+## Tue     153     193     166
+## Wed     183     190     170
+## Thu     153     161     171
+## Fri     154     181     186</code></pre>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="fu">as.matrix</span>(daily.prod))</span></code></pre></div>
+<pre><code>## [1] 172.6</code></pre>
+<h2 id="id_1211-데이터-프레임-정렬하기">12.11 데이터 프레임
+정렬하기</h2>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="at">file =</span> <span class="st">&quot;./data/outcome.rdata&quot;</span>)</span>
+<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div>
+<pre><code>##   month day outcome
+## 1     7  11     Win
+## 2     8  10    Lose
+## 3     8  25     Tie
+## 4     6  27     Tie
+## 5     7  22     Win</code></pre>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(df, month)</span></code></pre></div>
+<pre><code>##   month day outcome
+## 1     6  27     Tie
+## 2     7  11     Win
+## 3     7  22     Win
+## 4     8  10    Lose
+## 5     8  25     Tie</code></pre>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(df, <span class="sc">-</span>month)</span></code></pre></div>
+<pre><code>##   month day outcome
+## 1     8  10    Lose
+## 2     8  25     Tie
+## 3     7  11     Win
+## 4     7  22     Win
+## 5     6  27     Tie</code></pre>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(df, month, day)</span></code></pre></div>
+<pre><code>##   month day outcome
+## 1     6  27     Tie
+## 2     7  11     Win
+## 3     7  22     Win
+## 4     8  10    Lose
+## 5     8  25     Tie</code></pre>
+<h2 id="id_1212-변수에서-속성-제거">12.12 변수에서 속성 제거</h2>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="at">file =</span> <span class="st">&quot;./data/conf.rdata&quot;</span>)</span>
+<span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x1)</span>
+<span id="cb77-3"><a href="#cb77-3" aria-hidden="true" tabindex="-1"></a>slope <span class="ot">&lt;-</span> <span class="fu">coef</span>(m)[<span class="dv">2</span>]</span>
+<span id="cb77-4"><a href="#cb77-4" aria-hidden="true" tabindex="-1"></a>slope</span></code></pre></div>
+<pre><code>##        x1 
+## -10.96094</code></pre>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(slope)</span></code></pre></div>
+<pre><code>##  Named num -11
+##  - attr(*, &quot;names&quot;)= chr &quot;x1&quot;</code></pre>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attributes</span>(slope) <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a>slope</span></code></pre></div>
+<pre><code>## [1] -10.96094</code></pre>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attr</span>(slope, <span class="st">&quot;names&quot;</span>) <span class="ot">&lt;-</span> <span class="cn">NULL</span></span></code></pre></div>
+<h2 id="id_1213-객체의-구조-공개하기">12.13 객체의 구조 공개하기</h2>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="at">file =</span> <span class="st">&quot;./data/conf.rdata&quot;</span>)</span>
+<span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> x1)</span>
+<span id="cb84-3"><a href="#cb84-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(m)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = y ~ x1)
+## 
+## Coefficients:
+## (Intercept)           x1  
+##       15.86       -10.96</code></pre>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(m)</span></code></pre></div>
+<pre><code>## [1] &quot;lm&quot;</code></pre>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mode</span>(m)</span></code></pre></div>
+<pre><code>## [1] &quot;list&quot;</code></pre>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(m)</span></code></pre></div>
+<pre><code>##  [1] &quot;coefficients&quot;  &quot;residuals&quot;     &quot;effects&quot;       &quot;rank&quot;          &quot;fitted.values&quot; &quot;assign&quot;       
+##  [7] &quot;qr&quot;            &quot;df.residual&quot;   &quot;xlevels&quot;       &quot;call&quot;          &quot;terms&quot;         &quot;model&quot;</code></pre>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(m)</span></code></pre></div>
+<pre><code>## List of 12
+##  $ coefficients : Named num [1:2] 15.9 -11
+##   ..- attr(*, &quot;names&quot;)= chr [1:2] &quot;(Intercept)&quot; &quot;x1&quot;
+##  $ residuals    : Named num [1:30] 36.6 58.6 112.1 -35.2 -61.7 ...
+##   ..- attr(*, &quot;names&quot;)= chr [1:30] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; ...
+##  $ effects      : Named num [1:30] -73.1 69.3 93.9 -31.1 -66.3 ...
+##   ..- attr(*, &quot;names&quot;)= chr [1:30] &quot;(Intercept)&quot; &quot;x1&quot; &quot;&quot; &quot;&quot; ...
+##  $ rank         : int 2
+##  $ fitted.values: Named num [1:30] 25.69 13.83 -1.55 28.25 16.74 ...
+##   ..- attr(*, &quot;names&quot;)= chr [1:30] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; ...
+##  $ assign       : int [1:2] 0 1
+##  $ qr           :List of 5
+##   ..$ qr   : num [1:30, 1:2] -5.477 0.183 0.183 0.183 0.183 ...
+##   .. ..- attr(*, &quot;dimnames&quot;)=List of 2
+##   .. .. ..$ : chr [1:30] &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; ...
+##   .. .. ..$ : chr [1:2] &quot;(Intercept)&quot; &quot;x1&quot;
+##   .. ..- attr(*, &quot;assign&quot;)= int [1:2] 0 1
+##   ..$ qraux: num [1:2] 1.18 1.02
+##   ..$ pivot: int [1:2] 1 2
+##   ..$ tol  : num 1e-07
+##   ..$ rank : int 2
+##   ..- attr(*, &quot;class&quot;)= chr &quot;qr&quot;
+##  $ df.residual  : int 28
+##  $ xlevels      : Named list()
+##  $ call         : language lm(formula = y ~ x1)
+##  $ terms        :Classes &#39;terms&#39;, &#39;formula&#39;  language y ~ x1
+##   .. ..- attr(*, &quot;variables&quot;)= language list(y, x1)
+##   .. ..- attr(*, &quot;factors&quot;)= int [1:2, 1] 0 1
+##   .. .. ..- attr(*, &quot;dimnames&quot;)=List of 2
+##   .. .. .. ..$ : chr [1:2] &quot;y&quot; &quot;x1&quot;
+##   .. .. .. ..$ : chr &quot;x1&quot;
+##   .. ..- attr(*, &quot;term.labels&quot;)= chr &quot;x1&quot;
+##   .. ..- attr(*, &quot;order&quot;)= int 1
+##   .. ..- attr(*, &quot;intercept&quot;)= int 1
+##   .. ..- attr(*, &quot;response&quot;)= int 1
+##   .. ..- attr(*, &quot;.Environment&quot;)=&lt;environment: R_GlobalEnv&gt; 
+##   .. ..- attr(*, &quot;predvars&quot;)= language list(y, x1)
+##   .. ..- attr(*, &quot;dataClasses&quot;)= Named chr [1:2] &quot;numeric&quot; &quot;numeric&quot;
+##   .. .. ..- attr(*, &quot;names&quot;)= chr [1:2] &quot;y&quot; &quot;x1&quot;
+##  $ model        :&#39;data.frame&#39;:   30 obs. of  2 variables:
+##   ..$ y : num [1:30] 62.25 72.45 110.59 -6.94 -44.99 ...
+##   ..$ x1: num [1:30] -0.8969 0.1848 1.5878 -1.1304 -0.0803 ...
+##   ..- attr(*, &quot;terms&quot;)=Classes &#39;terms&#39;, &#39;formula&#39;  language y ~ x1
+##   .. .. ..- attr(*, &quot;variables&quot;)= language list(y, x1)
+##   .. .. ..- attr(*, &quot;factors&quot;)= int [1:2, 1] 0 1
+##   .. .. .. ..- attr(*, &quot;dimnames&quot;)=List of 2
+##   .. .. .. .. ..$ : chr [1:2] &quot;y&quot; &quot;x1&quot;
+##   .. .. .. .. ..$ : chr &quot;x1&quot;
+##   .. .. ..- attr(*, &quot;term.labels&quot;)= chr &quot;x1&quot;
+##   .. .. ..- attr(*, &quot;order&quot;)= int 1
+##   .. .. ..- attr(*, &quot;intercept&quot;)= int 1
+##   .. .. ..- attr(*, &quot;response&quot;)= int 1
+##   .. .. ..- attr(*, &quot;.Environment&quot;)=&lt;environment: R_GlobalEnv&gt; 
+##   .. .. ..- attr(*, &quot;predvars&quot;)= language list(y, x1)
+##   .. .. ..- attr(*, &quot;dataClasses&quot;)= Named chr [1:2] &quot;numeric&quot; &quot;numeric&quot;
+##   .. .. .. ..- attr(*, &quot;names&quot;)= chr [1:2] &quot;y&quot; &quot;x1&quot;
+##  - attr(*, &quot;class&quot;)= chr &quot;lm&quot;</code></pre>
+<h2 id="id_1214-코드-타이밍">12.14 코드 타이밍</h2>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tictoc)</span>
+<span id="cb94-2"><a href="#cb94-2" aria-hidden="true" tabindex="-1"></a><span class="fu">tic</span>(<span class="st">&quot;making big numbers&quot;</span>)</span>
+<span id="cb94-3"><a href="#cb94-3" aria-hidden="true" tabindex="-1"></a>total_val <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">rnorm</span>(<span class="fl">1e7</span>))</span>
+<span id="cb94-4"><a href="#cb94-4" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span>()</span></code></pre></div>
+<pre><code>## making big numbers: 0.423 sec elapsed</code></pre>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tic</span>(<span class="st">&quot;two sums&quot;</span>)</span>
+<span id="cb96-2"><a href="#cb96-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">rnorm</span>(<span class="dv">10000000</span>))</span></code></pre></div>
+<pre><code>## [1] -1873.736</code></pre>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">rnorm</span>(<span class="dv">10000000</span>))</span></code></pre></div>
+<pre><code>## [1] 2792.78</code></pre>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a>toc_result <span class="ot">&lt;-</span> <span class="fu">toc</span>()</span></code></pre></div>
+<pre><code>## two sums: 0.56 sec elapsed</code></pre>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(toc_result)</span></code></pre></div>
+<pre><code>## $tic
+## elapsed 
+##  33.163 
+## 
+## $toc
+## elapsed 
+##  33.723 
+## 
+## $msg
+## [1] &quot;two sums&quot;
+## 
+## $callback_msg
+## [1] &quot;two sums: 0.56 sec elapsed&quot;</code></pre>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="st">&quot;the code ran in&quot;</span>, <span class="fu">round</span>((toc_result<span class="sc">$</span>toc <span class="sc">-</span> toc_result<span class="sc">$</span>tic) <span class="sc">/</span> <span class="dv">60</span>, <span class="dv">4</span>), <span class="st">&quot;minutes&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;the code ran in 0.0093 minutes&quot;</code></pre>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a>start <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb106-2"><a href="#cb106-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">rnorm</span>(<span class="dv">10000000</span>))</span></code></pre></div>
+<pre><code>## [1] -1743.237</code></pre>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">rnorm</span>(<span class="dv">10000000</span>))</span></code></pre></div>
+<pre><code>## [1] 6796.581</code></pre>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>() <span class="sc">-</span> start</span></code></pre></div>
+<pre><code>## Time difference of 0.5584109 secs</code></pre>
+<h2 id="id_1215-경고-및-오류-메시지-억제">12.15 경고 및 오류 메시지
+억제</h2>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tseries)</span></code></pre></div>
+<pre><code>## Registered S3 method overwritten by &#39;quantmod&#39;:
+##   method            from
+##   as.zoo.data.frame zoo
+
+## 
+##     &#39;tseries&#39; version: 0.10-51
+## 
+##     &#39;tseries&#39; is a package for time series analysis and computational finance.
+## 
+##     See &#39;library(help=&quot;tseries&quot;)&#39; for details.</code></pre>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">&quot;data/adf.rdata&quot;</span>)</span>
+<span id="cb114-2"><a href="#cb114-2" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">adf.test</span>(x)</span></code></pre></div>
+<pre><code>## Warning in adf.test(x): p-value smaller than printed p-value</code></pre>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a>results <span class="ot">&lt;-</span> <span class="fu">suppressWarnings</span>(<span class="fu">adf.test</span>(x))</span>
+<span id="cb116-2"><a href="#cb116-2" aria-hidden="true" tabindex="-1"></a>results</span></code></pre></div>
+<pre><code>## 
+##  Augmented Dickey-Fuller Test
+## 
+## data:  x
+## Dickey-Fuller = -5.6009, Lag order = 1, p-value = 0.01
+## alternative hypothesis: stationary</code></pre>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">warnings</span>()</span></code></pre></div>
+<h2 id="id_1216-목록에서-함수-인수-가져오기">12.16 목록에서 함수 인수
+가져오기</h2>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="#cb119-1" aria-hidden="true" tabindex="-1"></a>vec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span>)</span>
+<span id="cb119-2"><a href="#cb119-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(vec)</span></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="#cb121-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">7</span>, <span class="dv">9</span>)</span>
+<span id="cb121-2"><a href="#cb121-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="fu">unlist</span>(numbers))</span></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="#cb123-1" aria-hidden="true" tabindex="-1"></a>my_lists <span class="ot">&lt;-</span></span>
+<span id="cb123-2"><a href="#cb123-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(</span>
+<span id="cb123-3"><a href="#cb123-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">col1 =</span> <span class="fu">list</span>(<span class="dv">7</span>, <span class="dv">8</span>),</span>
+<span id="cb123-4"><a href="#cb123-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">col2 =</span> <span class="fu">list</span>(<span class="dv">70</span>, <span class="dv">80</span>),</span>
+<span id="cb123-5"><a href="#cb123-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">col3 =</span> <span class="fu">list</span>(<span class="dv">700</span>, <span class="dv">800</span>)</span>
+<span id="cb123-6"><a href="#cb123-6" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb123-7"><a href="#cb123-7" aria-hidden="true" tabindex="-1"></a>my_lists</span></code></pre></div>
+<pre><code>## $col1
+## $col1[[1]]
+## [1] 7
+## 
+## $col1[[2]]
+## [1] 8
+## 
+## 
+## $col2
+## $col2[[1]]
+## [1] 70
+## 
+## $col2[[2]]
+## [1] 80
+## 
+## 
+## $col3
+## $col3[[1]]
+## [1] 700
+## 
+## $col3[[2]]
+## [1] 800</code></pre>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="#cb125-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cbind</span>(my_lists)</span></code></pre></div>
+<pre><code>##      my_lists
+## col1 list,2  
+## col2 list,2  
+## col3 list,2</code></pre>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="#cb127-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cbind</span>(<span class="fu">unlist</span>(my_lists))</span></code></pre></div>
+<pre><code>##       [,1]
+## col11    7
+## col12    8
+## col21   70
+## col22   80
+## col31  700
+## col32  800</code></pre>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="#cb129-1" aria-hidden="true" tabindex="-1"></a><span class="fu">do.call</span>(cbind, my_lists)</span></code></pre></div>
+<pre><code>##      col1 col2 col3
+## [1,] 7    70   700 
+## [2,] 8    80   800</code></pre>
+<h2 id="id_1217-자신만의-이진-연산자-정의하기">12.17 자신만의 이진
+연산자 정의하기</h2>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;%+-%&quot;</span> <span class="ot">&lt;-</span> <span class="cf">function</span>(x, margin) {</span>
+<span id="cb131-2"><a href="#cb131-2" aria-hidden="true" tabindex="-1"></a>  x <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="sc">+</span><span class="dv">1</span>) <span class="sc">*</span> margin</span>
+<span id="cb131-3"><a href="#cb131-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="dv">100</span> <span class="sc">%+-%</span> (<span class="fl">1.96</span> <span class="sc">*</span> <span class="dv">15</span>)</span></code></pre></div>
+<pre><code>## [1]  70.6 129.4</code></pre>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="#cb134-1" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;%+%&quot;</span> <span class="ot">&lt;-</span> <span class="cf">function</span>(s1, s2) {</span>
+<span id="cb134-2"><a href="#cb134-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paste</span>(s1, s2, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span>
+<span id="cb134-3"><a href="#cb134-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb134-4"><a href="#cb134-4" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;Hello&quot;</span> <span class="sc">%+%</span> <span class="st">&quot;World&quot;</span></span></code></pre></div>
+<pre><code>## [1] &quot;HelloWorld&quot;</code></pre>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="#cb136-1" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;limit=&quot;</span> <span class="sc">%+%</span> <span class="fu">round</span>(<span class="fu">qnorm</span>(<span class="dv">1</span> <span class="sc">-</span> <span class="fl">0.05</span> <span class="sc">/</span> <span class="dv">2</span>), <span class="dv">2</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;limit=1.96&quot;</code></pre>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="dv">100</span> <span class="sc">%+-%</span> <span class="fl">1.96</span> <span class="sc">*</span> <span class="dv">15</span></span></code></pre></div>
+<pre><code>## [1] 1470.6 1529.4</code></pre>
+<h2 id="id_1218-시작-메시지-표시-안-함">12.18 시작 메시지 표시 안
+함</h2>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="#cb140-1" aria-hidden="true" tabindex="-1"></a><span class="co"># R --quiet</span></span></code></pre></div>
+<h2 id="id_1219-환경-변수-가져오기-및-설정">12.19 환경 변수 가져오기 및
+설정</h2>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="#cb141-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.getenv</span>()</span></code></pre></div>
+<pre><code>## __CF_USER_TEXT_ENCODING          0x1F5:0x0:0x0
+## __CFBundleIdentifier             org.rstudio.RStudio
+## CLICOLOR_FORCE                   1
+## COMMAND_MODE                     unix2003
+## DISPLAY                          /private/tmp/com.apple.launchd.jyKl1ohu9c/org.xquartz:0
+## EDITOR                           vi
+## GIT_ASKPASS                      rpostback-askpass
+## HOME                             /Users/gglee
+## LANG                             en_US.UTF-8
+## LC_CTYPE                         en_US.UTF-8
+## LN_S                             ln -s
+## LOGNAME                          gglee
+## MAKE                             make
+## MPLENGINE                        tkAgg
+## PAGER                            /usr/bin/less
+## PATH                             /opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/gglee/Applications/quarto/bin:/Library/TeX/texbin:/usr/texbin:/Applications/RStudio.app/Contents/MacOS/quarto/bin:/Applications/RStudio.app/Contents/MacOS
+## PYTHONIOENCODING                 utf-8
+## R_BROWSER                        /usr/bin/open
+## R_BZIPCMD                        /usr/bin/bzip2
+## R_CLI_HAS_HYPERLINK_IDE_HELP     true
+## R_CLI_HAS_HYPERLINK_IDE_RUN      true
+## R_CLI_HAS_HYPERLINK_IDE_VIGNETTE
+##                                  true
+## R_DOC_DIR                        /Library/Frameworks/R.framework/Versions/4.2-arm64/Resources/doc
+## R_GZIPCMD                        /usr/bin/gzip
+## R_HOME                           /Library/Frameworks/R.framework/Versions/4.2-arm64/Resources
+## R_INCLUDE_DIR                    /Library/Frameworks/R.framework/Versions/4.2-arm64/Resources/include
+## R_LIBS_SITE                      /Library/Frameworks/R.framework/Versions/4.2-arm64/Resources/site-library
+## R_LIBS_USER                      /Users/gglee/Library/R/arm64/4.2/library
+## R_PAPERSIZE                      a4
+## R_PDFVIEWER                      /usr/bin/open
+## R_PLATFORM                       aarch64-apple-darwin20
+## R_PRINTCMD                       lpr
+## R_QPDF                           /Library/Frameworks/R.framework/Versions/4.2-arm64/Resources/bin/qpdf
+## R_RD4PDF                         times,inconsolata,hyper
+## R_SESSION_TMPDIR                 /var/folders/nl/mgrs1_xj5jggr_n38rmyxdyc0000gn/T//RtmpfLcVXk
+## R_SHARE_DIR                      /Library/Frameworks/R.framework/Versions/4.2-arm64/Resources/share
+## R_STRIP_SHARED_LIB               strip -x
+## R_STRIP_STATIC_LIB               strip -S
+## R_SYSTEM_ABI                     macos,gcc,gxx,gfortran,gfortran
+## R_TEXI2DVICMD                    /opt/R/arm64/bin/texi2dvi
+## R_UNZIPCMD                       /usr/bin/unzip
+## R_ZIPCMD                         /usr/bin/zip
+## RMARKDOWN_MATHJAX_PATH           /Applications/RStudio.app/Contents/Resources/resources/mathjax-27
+## RS_PPM_FD_READ                   16
+## RS_PPM_FD_WRITE                  24
+## RS_RPOSTBACK_PATH                /Applications/RStudio.app/Contents/rpostback
+## RS_SHARED_SECRET                 aafcd899-a6bb-4b0b-aa6d-129092fbffb8
+## RSTUDIO                          1
+## RSTUDIO_CLI_HYPERLINKS           true
+## RSTUDIO_CONSOLE_COLOR            256
+## RSTUDIO_CONSOLE_WIDTH            111
+## RSTUDIO_FALLBACK_LIBRARY_PATH    /var/folders/nl/mgrs1_xj5jggr_n38rmyxdyc0000gn/T/rstudio-fallback-library-path-dmxXmL
+## RSTUDIO_PANDOC                   /Applications/RStudio.app/Contents/MacOS/quarto/bin/tools
+## RSTUDIO_PROGRAM_MODE             desktop
+## RSTUDIO_SESSION_PID              1103
+## RSTUDIO_SESSION_PORT             59195
+## RSTUDIO_USER_IDENTITY            gglee
+## RSTUDIO_WINUTILS                 bin/winutils
+## SED                              /usr/bin/sed
+## SHELL                            /bin/zsh
+## SSH_ASKPASS                      rpostback-askpass
+## SSH_AUTH_SOCK                    /private/tmp/com.apple.launchd.yHWXanx3fI/Listeners
+## TAR                              /usr/bin/tar
+## TERM                             xterm-256color
+## TMPDIR                           /var/folders/nl/mgrs1_xj5jggr_n38rmyxdyc0000gn/T/
+## TZDIR                            /var/db/timezone/zoneinfo
+## USER                             gglee
+## XPC_FLAGS                        0x0
+## XPC_SERVICE_NAME                 application.org.rstudio.RStudio.4643821.4643841</code></pre>
+<h2 id="id_1220-코드-섹션-사용">12.20 코드 섹션 사용</h2>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="#cb143-1" aria-hidden="true" tabindex="-1"></a><span class="co"># test ----</span></span></code></pre></div>
+<h2 id="id_1221-로컬에서-병렬로-r-실행하기">12.21 로컬에서 병렬로 R
+실행하기</h2>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="#cb144-1" aria-hidden="true" tabindex="-1"></a><span class="co"># devtools::install_github(&quot;DavisVaughan/furrr&quot;)</span></span></code></pre></div>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="#cb145-1" aria-hidden="true" tabindex="-1"></a>simulate_pi <span class="ot">&lt;-</span> <span class="cf">function</span>(n_iterations) {</span>
+<span id="cb145-2"><a href="#cb145-2" aria-hidden="true" tabindex="-1"></a>  rand_draws <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">runif</span>(<span class="dv">2</span> <span class="sc">*</span> n_iterations, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>), <span class="at">ncol =</span> <span class="dv">2</span>)</span>
+<span id="cb145-3"><a href="#cb145-3" aria-hidden="true" tabindex="-1"></a>  num_in <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">sqrt</span>(rand_draws[, <span class="dv">1</span>]<span class="sc">**</span><span class="dv">2</span> <span class="sc">+</span> rand_draws[, <span class="dv">2</span>]<span class="sc">**</span><span class="dv">2</span>) <span class="sc">&lt;=</span> <span class="dv">1</span>)</span>
+<span id="cb145-4"><a href="#cb145-4" aria-hidden="true" tabindex="-1"></a>  pi_hat <span class="ot">&lt;-</span> (num_in <span class="sc">/</span> n_iterations) <span class="sc">*</span> <span class="dv">4</span></span>
+<span id="cb145-5"><a href="#cb145-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(pi_hat)</span>
+<span id="cb145-6"><a href="#cb145-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb145-7"><a href="#cb145-7" aria-hidden="true" tabindex="-1"></a><span class="fu">simulate_pi</span>(<span class="dv">1000000</span>)</span></code></pre></div>
+<pre><code>## [1] 3.143172</code></pre>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="#cb147-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(purrr) <span class="co"># for `map`</span></span>
+<span id="cb147-2"><a href="#cb147-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tictoc) <span class="co"># for timing our code</span></span>
+<span id="cb147-3"><a href="#cb147-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb147-4"><a href="#cb147-4" aria-hidden="true" tabindex="-1"></a>draw_list <span class="ot">&lt;-</span> <span class="fu">as.list</span>(<span class="fu">rep</span>(<span class="dv">5000000</span>, <span class="dv">200</span>))</span>
+<span id="cb147-5"><a href="#cb147-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb147-6"><a href="#cb147-6" aria-hidden="true" tabindex="-1"></a><span class="fu">tic</span>(<span class="st">&quot;simulate pi - single process&quot;</span>)</span>
+<span id="cb147-7"><a href="#cb147-7" aria-hidden="true" tabindex="-1"></a>sims_list <span class="ot">&lt;-</span> <span class="fu">map</span>(draw_list, simulate_pi)</span>
+<span id="cb147-8"><a href="#cb147-8" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span>()</span></code></pre></div>
+<pre><code>## simulate pi - single process: 21.201 sec elapsed</code></pre>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="#cb149-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; simulate pi - single process: 131.861 sec elapsed</span></span>
+<span id="cb149-2"><a href="#cb149-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb149-3"><a href="#cb149-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="fu">unlist</span>(sims_list))</span></code></pre></div>
+<pre><code>## [1] 3.141563</code></pre>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="#cb151-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(furrr)</span></code></pre></div>
+<pre><code>## Loading required package: future
+
+## 
+## Attaching package: &#39;future&#39;
+
+## The following object is masked from &#39;package:tseries&#39;:
+## 
+##     value</code></pre>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="#cb153-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plan</span>(multiprocess)</span></code></pre></div>
+<pre><code>## Warning: Strategy &#39;multiprocess&#39; is deprecated in future (&gt;= 1.20.0) [2020-10-30]. Instead, explicitly
+## specify either &#39;multisession&#39; (recommended) or &#39;multicore&#39;. In the current R session, &#39;multiprocess&#39; equals
+## &#39;multisession&#39;.
+
+## Warning in supportsMulticoreAndRStudio(...): [ONE-TIME WARNING] Forked processing (&#39;multicore&#39;) is
+## not supported when running R from RStudio because it is considered unstable. For more details, how
+## to control forked processing or not, and how to silence this warning in future R sessions, see ?
+## parallelly::supportsMulticore</code></pre>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="#cb155-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tic</span>(<span class="st">&quot;simulate pi - parallel&quot;</span>)</span>
+<span id="cb155-2"><a href="#cb155-2" aria-hidden="true" tabindex="-1"></a>sims_list <span class="ot">&lt;-</span> <span class="fu">future_map</span>(draw_list, simulate_pi)</span></code></pre></div>
+<pre><code>## Warning: UNRELIABLE VALUE: Future (&#39;&lt;none&gt;&#39;) unexpectedly generated random numbers without specifying argument
+## &#39;seed&#39;. There is a risk that those random numbers are not statistically sound and the overall results might be
+## invalid. To fix this, specify &#39;seed=TRUE&#39;. This ensures that proper, parallel-safe random numbers are produced
+## via the L&#39;Ecuyer-CMRG method. To disable this check, use &#39;seed=NULL&#39;, or set option &#39;future.rng.onMisuse&#39; to
+## &quot;ignore&quot;.
+
+## Warning: UNRELIABLE VALUE: Future (&#39;&lt;none&gt;&#39;) unexpectedly generated random numbers without specifying argument
+## &#39;seed&#39;. There is a risk that those random numbers are not statistically sound and the overall results might be
+## invalid. To fix this, specify &#39;seed=TRUE&#39;. This ensures that proper, parallel-safe random numbers are produced
+## via the L&#39;Ecuyer-CMRG method. To disable this check, use &#39;seed=NULL&#39;, or set option &#39;future.rng.onMisuse&#39; to
+## &quot;ignore&quot;.
+
+## Warning: UNRELIABLE VALUE: Future (&#39;&lt;none&gt;&#39;) unexpectedly generated random numbers without specifying argument
+## &#39;seed&#39;. There is a risk that those random numbers are not statistically sound and the overall results might be
+## invalid. To fix this, specify &#39;seed=TRUE&#39;. This ensures that proper, parallel-safe random numbers are produced
+## via the L&#39;Ecuyer-CMRG method. To disable this check, use &#39;seed=NULL&#39;, or set option &#39;future.rng.onMisuse&#39; to
+## &quot;ignore&quot;.
+
+## Warning: UNRELIABLE VALUE: Future (&#39;&lt;none&gt;&#39;) unexpectedly generated random numbers without specifying argument
+## &#39;seed&#39;. There is a risk that those random numbers are not statistically sound and the overall results might be
+## invalid. To fix this, specify &#39;seed=TRUE&#39;. This ensures that proper, parallel-safe random numbers are produced
+## via the L&#39;Ecuyer-CMRG method. To disable this check, use &#39;seed=NULL&#39;, or set option &#39;future.rng.onMisuse&#39; to
+## &quot;ignore&quot;.
+
+## Warning: UNRELIABLE VALUE: Future (&#39;&lt;none&gt;&#39;) unexpectedly generated random numbers without specifying argument
+## &#39;seed&#39;. There is a risk that those random numbers are not statistically sound and the overall results might be
+## invalid. To fix this, specify &#39;seed=TRUE&#39;. This ensures that proper, parallel-safe random numbers are produced
+## via the L&#39;Ecuyer-CMRG method. To disable this check, use &#39;seed=NULL&#39;, or set option &#39;future.rng.onMisuse&#39; to
+## &quot;ignore&quot;.
+
+## Warning: UNRELIABLE VALUE: Future (&#39;&lt;none&gt;&#39;) unexpectedly generated random numbers without specifying argument
+## &#39;seed&#39;. There is a risk that those random numbers are not statistically sound and the overall results might be
+## invalid. To fix this, specify &#39;seed=TRUE&#39;. This ensures that proper, parallel-safe random numbers are produced
+## via the L&#39;Ecuyer-CMRG method. To disable this check, use &#39;seed=NULL&#39;, or set option &#39;future.rng.onMisuse&#39; to
+## &quot;ignore&quot;.
+
+## Warning: UNRELIABLE VALUE: Future (&#39;&lt;none&gt;&#39;) unexpectedly generated random numbers without specifying argument
+## &#39;seed&#39;. There is a risk that those random numbers are not statistically sound and the overall results might be
+## invalid. To fix this, specify &#39;seed=TRUE&#39;. This ensures that proper, parallel-safe random numbers are produced
+## via the L&#39;Ecuyer-CMRG method. To disable this check, use &#39;seed=NULL&#39;, or set option &#39;future.rng.onMisuse&#39; to
+## &quot;ignore&quot;.
+
+## Warning: UNRELIABLE VALUE: Future (&#39;&lt;none&gt;&#39;) unexpectedly generated random numbers without specifying argument
+## &#39;seed&#39;. There is a risk that those random numbers are not statistically sound and the overall results might be
+## invalid. To fix this, specify &#39;seed=TRUE&#39;. This ensures that proper, parallel-safe random numbers are produced
+## via the L&#39;Ecuyer-CMRG method. To disable this check, use &#39;seed=NULL&#39;, or set option &#39;future.rng.onMisuse&#39; to
+## &quot;ignore&quot;.
+
+## Warning: UNRELIABLE VALUE: Future (&#39;&lt;none&gt;&#39;) unexpectedly generated random numbers without specifying argument
+## &#39;seed&#39;. There is a risk that those random numbers are not statistically sound and the overall results might be
+## invalid. To fix this, specify &#39;seed=TRUE&#39;. This ensures that proper, parallel-safe random numbers are produced
+## via the L&#39;Ecuyer-CMRG method. To disable this check, use &#39;seed=NULL&#39;, or set option &#39;future.rng.onMisuse&#39; to
+## &quot;ignore&quot;.
+
+## Warning: UNRELIABLE VALUE: Future (&#39;&lt;none&gt;&#39;) unexpectedly generated random numbers without specifying argument
+## &#39;seed&#39;. There is a risk that those random numbers are not statistically sound and the overall results might be
+## invalid. To fix this, specify &#39;seed=TRUE&#39;. This ensures that proper, parallel-safe random numbers are produced
+## via the L&#39;Ecuyer-CMRG method. To disable this check, use &#39;seed=NULL&#39;, or set option &#39;future.rng.onMisuse&#39; to
+## &quot;ignore&quot;.</code></pre>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="#cb157-1" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span>()</span></code></pre></div>
+<pre><code>## simulate pi - parallel: 4.324 sec elapsed</code></pre>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="#cb159-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(<span class="fu">unlist</span>(sims_list))</span></code></pre></div>
+<pre><code>## [1] 3.141571</code></pre>
+<h2 id="id_1222-원격에서-병렬로-r-실행하기">12.22 원격에서 병렬로 R
+실행하기</h2>
+
+</body>
+</html>

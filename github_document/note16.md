@@ -1,8 +1,5 @@
----
-title: "note16"
-output: html_notebook
-always_allow_html: true
----
+note16
+================
 
 # 16 R 마크다운 및 퍼블리싱
 
@@ -10,7 +7,7 @@ always_allow_html: true
 
 ## 16.2 제목, 저자 또는 날짜 추가
 
-```{r}
+``` r
 # ---
 # title: "Your Title Here"
 # author: "Your Name Here"
@@ -27,19 +24,19 @@ always_allow_html: true
 
 `code`
 
-sub~script~
+sub<sub>script</sub>
 
-super^script^
+super<sup>script</sup>
 
 a-b dash
 
--- endash
+– endash
 
---- emdash
+— emdash
 
 ## 16.4 문서 제목 삽입
 
-```{r}
+``` r
 # Level 1 Heading
 ## Level 2 Heading
 ### Level 3 Heading
@@ -66,44 +63,53 @@ a-b dash
 
 1.  first item
 2.  second item
-    a.  abc
-    b.  def
-        i.  this
-        ii. is the last
-    c.  sd
+    1.  abc
+    2.  def
+        1.  this
+        2.  is the last
+    3.  sd
 3.  test
 
 ## 16.6 R 코드의 출력 보기
 
-The square root of pi is `r sqrt(pi)`.
+The square root of pi is 1.7724539.
 
-```{r}
+``` r
 sqrt(pi)
+```
+
+    ## [1] 1.772454
+
+``` r
 sqrt(1:5)
 ```
 
+    ## [1] 1.000000 1.414214 1.732051 2.000000 2.236068
+
 ## 16.7 어떤 코드와 결과를 보여줄지 제어하기
-
-```{r}
-
-```
 
 ## 16.8 플롯 삽입
 
-```{r}
+``` r
 library(ggplot2)
 gg <- ggplot(airquality, aes(Wind, Temp)) +
   geom_point()
 print(gg)
 ```
 
-```{r out.width='30%'}
+![](note16_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+
+``` r
 print(gg)
 ```
 
-```{r out.width='50%', out.height='20%', fig.cap='Temperature versus wind speed', fig.align='left'}
+<img src="note16_files/figure-gfm/unnamed-chunk-6-1.png" width="30%" />
+
+``` r
 print(gg)
 ```
+
+<img src="note16_files/figure-gfm/unnamed-chunk-7-1.png" alt="Temperature versus wind speed" width="50%" height="20%" style="display: block; margin: auto auto auto 0;" />
 
 ## 16.9 테이블 삽입
 
@@ -121,7 +127,7 @@ print(gg)
 
 ## 16.10 데이터 테이블 삽입
 
-```{r}
+``` r
 myTable <- data.frame(
   x = c(1.111, 2.222, 3.333),
   y = c("one", "two", "three"),
@@ -130,7 +136,61 @@ myTable <- data.frame(
 knitr::kable(myTable, caption = "My Table")
 ```
 
-```{r}
+<table>
+<caption>
+My Table
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+x
+</th>
+<th style="text-align:left;">
+y
+</th>
+<th style="text-align:right;">
+z
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1.111
+</td>
+<td style="text-align:left;">
+one
+</td>
+<td style="text-align:right;">
+3.141593
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2.222
+</td>
+<td style="text-align:left;">
+two
+</td>
+<td style="text-align:right;">
+6.283185
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3.333
+</td>
+<td style="text-align:left;">
+three
+</td>
+<td style="text-align:right;">
+9.424778
+</td>
+</tr>
+</tbody>
+</table>
+
+``` r
 library(knitr)
 library(kableExtra)
 
@@ -143,13 +203,68 @@ kable(myTable, digits = 2, caption = "My Table") %>%
   )
 ```
 
-```{r}
+<table class="table" style="font-size: 12px; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption style="font-size: initial !important;">
+My Table
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+x
+</th>
+<th style="text-align:left;">
+y
+</th>
+<th style="text-align:right;">
+z
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1.11
+</td>
+<td style="text-align:left;">
+one
+</td>
+<td style="text-align:right;">
+3.14
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2.22
+</td>
+<td style="text-align:left;">
+two
+</td>
+<td style="text-align:right;">
+6.28
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3.33
+</td>
+<td style="text-align:left;">
+three
+</td>
+<td style="text-align:right;">
+9.42
+</td>
+</tr>
+</tbody>
+</table>
+
+``` r
 flextable::regulartable(myTable)
 ```
 
 ## 16.11 수학 방정식 삽입하기
 
-This is an example of math equations: $\beta = (X^{T}X)^{-1}X^{T}{\bf{y}}$.
+This is an example of math equations:
+$\beta = (X^{T}X)^{-1}X^{T}{\bf{y}}$.
 
 $$
 \frac{\partial \mathrm C}{ \partial \mathrm t } + \frac{1}{2}\sigma^{2} 
@@ -162,7 +277,7 @@ $$
 
 ## 16.13 PDF 출력 생성 하기
 
-Sometimes you want to write directly in \LaTeX !
+Sometimes you want to write directly in !
 
 ## 16.14 마이크로소프트 워드 출력 생성 하기
 
@@ -176,7 +291,7 @@ $$
 
 $( \big( \Big( \bigg( \Bigg($
 
-```{r}
+``` r
 library(tidyverse)
 mtcars %>%
   group_by(cyl, gear) %>%
@@ -187,7 +302,11 @@ mtcars %>%
   theme_bw()
 ```
 
-```{r, dpi=300}
+    ## `summarise()` has grouped output by 'cyl'. You can override using the `.groups` argument.
+
+![](note16_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
+
+``` r
 mtcars %>%
   group_by(cyl, gear) %>%
   summarize(mean_hp = mean(hp)) %>%
@@ -197,7 +316,11 @@ mtcars %>%
   theme_bw()
 ```
 
-```{r}
+    ## `summarise()` has grouped output by 'cyl'. You can override using the `.groups` argument.
+
+![](note16_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+
+``` r
 library(knitr)
 myTable <- tibble(
   x = c(1.111, 2.222, 3.333),
@@ -207,12 +330,66 @@ myTable <- tibble(
 kable(myTable, caption = "My Table in Word")
 ```
 
-```{r}
+<table>
+<caption>
+My Table in Word
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+x
+</th>
+<th style="text-align:left;">
+y
+</th>
+<th style="text-align:right;">
+z
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1.111
+</td>
+<td style="text-align:left;">
+one
+</td>
+<td style="text-align:right;">
+5
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2.222
+</td>
+<td style="text-align:left;">
+two
+</td>
+<td style="text-align:right;">
+6
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3.333
+</td>
+<td style="text-align:left;">
+three
+</td>
+<td style="text-align:right;">
+7
+</td>
+</tr>
+</tbody>
+</table>
+
+``` r
 library(flextable)
 regulartable(myTable)
 ```
 
-```{r}
+``` r
 regulartable(myTable) %>%
   width(width = c(.5, 1.5, 3)) %>%
   bg(bg = "#000080", part = "header") %>%

@@ -128,15 +128,15 @@ load(file = "./data/xy.rdata")
 print(x)
 ```
 
-    ##  [1] -0.6264538  0.1836433 -0.8356286  1.5952808  0.3295078 -0.8204684
-    ##  [7]  0.4874291  0.7383247  0.5757814 -0.3053884
+    ##  [1] -0.6264538  0.1836433 -0.8356286  1.5952808  0.3295078 -0.8204684  0.4874291  0.7383247  0.5757814
+    ## [10] -0.3053884
 
 ``` r
 print(y)
 ```
 
-    ##  [1]  1.51178117  0.38984324 -0.62124058 -2.21469989  1.12493092
-    ##  [6] -0.04493361 -0.01619026  0.94383621  0.82122120  0.59390132
+    ##  [1]  1.51178117  0.38984324 -0.62124058 -2.21469989  1.12493092 -0.04493361 -0.01619026  0.94383621
+    ##  [9]  0.82122120  0.59390132
 
 ``` r
 cbind(x, y, Total = x + y)
@@ -351,7 +351,6 @@ expand_grid(faces, faces)
     ##  9 2 pips    3 pips   
     ## 10 2 pips    4 pips   
     ## # … with 26 more rows
-    ## # ℹ Use `print(n = ...)` to see more rows
 
 ``` r
 ?expand_grid
@@ -487,9 +486,8 @@ mode(m)
 names(m)
 ```
 
-    ##  [1] "coefficients"  "residuals"     "effects"       "rank"         
-    ##  [5] "fitted.values" "assign"        "qr"            "df.residual"  
-    ##  [9] "xlevels"       "call"          "terms"         "model"
+    ##  [1] "coefficients"  "residuals"     "effects"       "rank"          "fitted.values" "assign"       
+    ##  [7] "qr"            "df.residual"   "xlevels"       "call"          "terms"         "model"
 
 ``` r
 str(m)
@@ -562,7 +560,7 @@ total_val <- sum(rnorm(1e7))
 toc()
 ```
 
-    ## making big numbers: 0.642 sec elapsed
+    ## making big numbers: 0.423 sec elapsed
 
 ``` r
 tic("two sums")
@@ -581,28 +579,31 @@ sum(rnorm(10000000))
 toc_result <- toc()
 ```
 
-    ## two sums: 0.601 sec elapsed
+    ## two sums: 0.56 sec elapsed
 
 ``` r
 print(toc_result)
 ```
 
     ## $tic
-    ##  elapsed 
-    ## 2421.297 
+    ## elapsed 
+    ##  33.163 
     ## 
     ## $toc
-    ##  elapsed 
-    ## 2421.898 
+    ## elapsed 
+    ##  33.723 
     ## 
     ## $msg
     ## [1] "two sums"
+    ## 
+    ## $callback_msg
+    ## [1] "two sums: 0.56 sec elapsed"
 
 ``` r
 paste("the code ran in", round((toc_result$toc - toc_result$tic) / 60, 4), "minutes")
 ```
 
-    ## [1] "the code ran in 0.01 minutes"
+    ## [1] "the code ran in 0.0093 minutes"
 
 ``` r
 start <- Sys.time()
@@ -621,7 +622,7 @@ sum(rnorm(10000000))
 Sys.time() - start
 ```
 
-    ## Time difference of 0.572103 secs
+    ## Time difference of 0.5584109 secs
 
 ## 12.15 경고 및 오류 메시지 억제
 
@@ -629,11 +630,14 @@ Sys.time() - start
 library(tseries)
 ```
 
+    ## Registered S3 method overwritten by 'quantmod':
+    ##   method            from
+    ##   as.zoo.data.frame zoo
+
     ## 
     ##     'tseries' version: 0.10-51
     ## 
-    ##     'tseries' is a package for time series analysis and
-    ##     computational finance.
+    ##     'tseries' is a package for time series analysis and computational finance.
     ## 
     ##     See 'library(help="tseries")' for details.
 
@@ -785,90 +789,76 @@ do.call(cbind, my_lists)
 Sys.getenv()
 ```
 
-    ## __CF_USER_TEXT_ENCODING
-    ##                      0x1F5:0x0:0x0
-    ## __CFBundleIdentifier
-    ##                      org.rstudio.RStudio
-    ## CLICOLOR_FORCE       1
-    ## COMMAND_MODE         unix2003
-    ## DISPLAY              /private/tmp/com.apple.launchd.YWX2srj1iM/org.xquartz:0
-    ## EDITOR               vi
-    ## GIT_ASKPASS          rpostback-askpass
-    ## HOME                 /Users/gglee
-    ## LANG                 en_US.UTF-8
-    ## LC_CTYPE             en_US.UTF-8
-    ## LD_LIBRARY_PATH      
-    ## LN_S                 ln -s
-    ## LOGNAME              gglee
-    ## MAKE                 make
-    ## MPLENGINE            tkAgg
-    ## PAGER                /usr/bin/less
-    ## PATH                 /opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/gglee/Applications/quarto/bin:/Library/TeX/texbin:/usr/texbin:/Applications/RStudio.app/Contents/MacOS/quarto/bin:/Applications/RStudio.app/Contents/MacOS
-    ## PYTHONIOENCODING     utf-8
-    ## R_BROWSER            /usr/bin/open
-    ## R_BZIPCMD            /usr/bin/bzip2
-    ## R_CLI_HAS_HYPERLINK_IDE_HELP
-    ##                      true
-    ## R_CLI_HAS_HYPERLINK_IDE_RUN
-    ##                      true
+    ## __CF_USER_TEXT_ENCODING          0x1F5:0x0:0x0
+    ## __CFBundleIdentifier             org.rstudio.RStudio
+    ## CLICOLOR_FORCE                   1
+    ## COMMAND_MODE                     unix2003
+    ## DISPLAY                          /private/tmp/com.apple.launchd.jyKl1ohu9c/org.xquartz:0
+    ## EDITOR                           vi
+    ## GIT_ASKPASS                      rpostback-askpass
+    ## HOME                             /Users/gglee
+    ## LANG                             en_US.UTF-8
+    ## LC_CTYPE                         en_US.UTF-8
+    ## LN_S                             ln -s
+    ## LOGNAME                          gglee
+    ## MAKE                             make
+    ## MPLENGINE                        tkAgg
+    ## PAGER                            /usr/bin/less
+    ## PATH                             /opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/gglee/Applications/quarto/bin:/Library/TeX/texbin:/usr/texbin:/Applications/RStudio.app/Contents/MacOS/quarto/bin:/Applications/RStudio.app/Contents/MacOS
+    ## PYTHONIOENCODING                 utf-8
+    ## R_BROWSER                        /usr/bin/open
+    ## R_BZIPCMD                        /usr/bin/bzip2
+    ## R_CLI_HAS_HYPERLINK_IDE_HELP     true
+    ## R_CLI_HAS_HYPERLINK_IDE_RUN      true
     ## R_CLI_HAS_HYPERLINK_IDE_VIGNETTE
-    ##                      true
-    ## R_DOC_DIR            /Library/Frameworks/R.framework/Versions/4.2-arm64/Resources/doc
-    ## R_GZIPCMD            /usr/bin/gzip
-    ## R_HOME               /Library/Frameworks/R.framework/Versions/4.2-arm64/Resources
-    ## R_INCLUDE_DIR        /Library/Frameworks/R.framework/Versions/4.2-arm64/Resources/include
-    ## R_LIBS_SITE          /Library/Frameworks/R.framework/Versions/4.2-arm64/Resources/site-library
-    ## R_LIBS_USER          /Users/gglee/Library/R/arm64/4.2/library
-    ## R_PAPERSIZE          a4
-    ## R_PDFVIEWER          /usr/bin/open
-    ## R_PLATFORM           aarch64-apple-darwin20
-    ## R_PRINTCMD           lpr
-    ## R_QPDF               /Library/Frameworks/R.framework/Versions/4.2-arm64/Resources/bin/qpdf
-    ## R_RD4PDF             times,inconsolata,hyper
-    ## R_SESSION_TMPDIR     /var/folders/nl/mgrs1_xj5jggr_n38rmyxdyc0000gn/T//RtmpVozh41
-    ## R_SHARE_DIR          /Library/Frameworks/R.framework/Versions/4.2-arm64/Resources/share
-    ## R_STRIP_SHARED_LIB   strip -x
-    ## R_STRIP_STATIC_LIB   strip -S
-    ## R_SYSTEM_ABI         macos,gcc,gxx,gfortran,gfortran
-    ## R_TEXI2DVICMD        /opt/R/arm64/bin/texi2dvi
-    ## R_UNZIPCMD           /usr/bin/unzip
-    ## R_ZIPCMD             /usr/bin/zip
-    ## RMARKDOWN_MATHJAX_PATH
-    ##                      /Applications/RStudio.app/Contents/Resources/resources/mathjax-27
-    ## RS_PPM_FD_READ       45
-    ## RS_PPM_FD_WRITE      81
-    ## RS_RPOSTBACK_PATH    /Applications/RStudio.app/Contents/rpostback
-    ## RS_SHARED_SECRET     717dfa86-1d74-4949-bf47-d929fcbc847c
-    ## RSTUDIO              1
-    ## RSTUDIO_CLI_HYPERLINKS
-    ##                      true
-    ## RSTUDIO_CONSOLE_COLOR
-    ##                      256
-    ## RSTUDIO_CONSOLE_WIDTH
-    ##                      72
-    ## RSTUDIO_FALLBACK_LIBRARY_PATH
-    ##                      /var/folders/nl/mgrs1_xj5jggr_n38rmyxdyc0000gn/T/rstudio-fallback-library-path-lVCpdj
-    ## RSTUDIO_PANDOC       /Applications/RStudio.app/Contents/MacOS/quarto/bin/tools
-    ## RSTUDIO_PROGRAM_MODE
-    ##                      desktop
-    ## RSTUDIO_SESSION_PID
-    ##                      33134
-    ## RSTUDIO_SESSION_PORT
-    ##                      64845
-    ## RSTUDIO_USER_IDENTITY
-    ##                      gglee
-    ## RSTUDIO_WINUTILS     bin/winutils
-    ## SED                  /usr/bin/sed
-    ## SHELL                /bin/zsh
-    ## SSH_ASKPASS          rpostback-askpass
-    ## SSH_AUTH_SOCK        /private/tmp/com.apple.launchd.CDgen5Vc6z/Listeners
-    ## TAR                  /usr/bin/tar
-    ## TERM                 xterm-256color
-    ## TMPDIR               /var/folders/nl/mgrs1_xj5jggr_n38rmyxdyc0000gn/T/
-    ## TZDIR                /usr/share/zoneinfo
-    ## USER                 gglee
-    ## XPC_FLAGS            0x0
-    ## XPC_SERVICE_NAME     0
+    ##                                  true
+    ## R_DOC_DIR                        /Library/Frameworks/R.framework/Versions/4.2-arm64/Resources/doc
+    ## R_GZIPCMD                        /usr/bin/gzip
+    ## R_HOME                           /Library/Frameworks/R.framework/Versions/4.2-arm64/Resources
+    ## R_INCLUDE_DIR                    /Library/Frameworks/R.framework/Versions/4.2-arm64/Resources/include
+    ## R_LIBS_SITE                      /Library/Frameworks/R.framework/Versions/4.2-arm64/Resources/site-library
+    ## R_LIBS_USER                      /Users/gglee/Library/R/arm64/4.2/library
+    ## R_PAPERSIZE                      a4
+    ## R_PDFVIEWER                      /usr/bin/open
+    ## R_PLATFORM                       aarch64-apple-darwin20
+    ## R_PRINTCMD                       lpr
+    ## R_QPDF                           /Library/Frameworks/R.framework/Versions/4.2-arm64/Resources/bin/qpdf
+    ## R_RD4PDF                         times,inconsolata,hyper
+    ## R_SESSION_TMPDIR                 /var/folders/nl/mgrs1_xj5jggr_n38rmyxdyc0000gn/T//RtmpfLcVXk
+    ## R_SHARE_DIR                      /Library/Frameworks/R.framework/Versions/4.2-arm64/Resources/share
+    ## R_STRIP_SHARED_LIB               strip -x
+    ## R_STRIP_STATIC_LIB               strip -S
+    ## R_SYSTEM_ABI                     macos,gcc,gxx,gfortran,gfortran
+    ## R_TEXI2DVICMD                    /opt/R/arm64/bin/texi2dvi
+    ## R_UNZIPCMD                       /usr/bin/unzip
+    ## R_ZIPCMD                         /usr/bin/zip
+    ## RMARKDOWN_MATHJAX_PATH           /Applications/RStudio.app/Contents/Resources/resources/mathjax-27
+    ## RS_PPM_FD_READ                   16
+    ## RS_PPM_FD_WRITE                  24
+    ## RS_RPOSTBACK_PATH                /Applications/RStudio.app/Contents/rpostback
+    ## RS_SHARED_SECRET                 aafcd899-a6bb-4b0b-aa6d-129092fbffb8
+    ## RSTUDIO                          1
+    ## RSTUDIO_CLI_HYPERLINKS           true
+    ## RSTUDIO_CONSOLE_COLOR            256
+    ## RSTUDIO_CONSOLE_WIDTH            111
+    ## RSTUDIO_FALLBACK_LIBRARY_PATH    /var/folders/nl/mgrs1_xj5jggr_n38rmyxdyc0000gn/T/rstudio-fallback-library-path-dmxXmL
+    ## RSTUDIO_PANDOC                   /Applications/RStudio.app/Contents/MacOS/quarto/bin/tools
+    ## RSTUDIO_PROGRAM_MODE             desktop
+    ## RSTUDIO_SESSION_PID              1103
+    ## RSTUDIO_SESSION_PORT             59195
+    ## RSTUDIO_USER_IDENTITY            gglee
+    ## RSTUDIO_WINUTILS                 bin/winutils
+    ## SED                              /usr/bin/sed
+    ## SHELL                            /bin/zsh
+    ## SSH_ASKPASS                      rpostback-askpass
+    ## SSH_AUTH_SOCK                    /private/tmp/com.apple.launchd.yHWXanx3fI/Listeners
+    ## TAR                              /usr/bin/tar
+    ## TERM                             xterm-256color
+    ## TMPDIR                           /var/folders/nl/mgrs1_xj5jggr_n38rmyxdyc0000gn/T/
+    ## TZDIR                            /var/db/timezone/zoneinfo
+    ## USER                             gglee
+    ## XPC_FLAGS                        0x0
+    ## XPC_SERVICE_NAME                 application.org.rstudio.RStudio.4643821.4643841
 
 ## 12.20 코드 섹션 사용
 
@@ -905,7 +895,7 @@ sims_list <- map(draw_list, simulate_pi)
 toc()
 ```
 
-    ## simulate pi - single process: 22.813 sec elapsed
+    ## simulate pi - single process: 21.201 sec elapsed
 
 ``` r
 #> simulate pi - single process: 131.861 sec elapsed
@@ -928,120 +918,94 @@ library(furrr)
     ## 
     ##     value
 
-    ## The following object is masked from 'package:rmarkdown':
-    ## 
-    ##     run
-
 ``` r
 plan(multiprocess)
 ```
 
-    ## Warning: Strategy 'multiprocess' is deprecated in future
-    ## (>= 1.20.0) [2020-10-30]. Instead, explicitly specify either
-    ## 'multisession' (recommended) or 'multicore'. In the current R session,
-    ## 'multiprocess' equals 'multisession'.
+    ## Warning: Strategy 'multiprocess' is deprecated in future (>= 1.20.0) [2020-10-30]. Instead, explicitly
+    ## specify either 'multisession' (recommended) or 'multicore'. In the current R session, 'multiprocess' equals
+    ## 'multisession'.
 
-    ## Warning in supportsMulticoreAndRStudio(...): [ONE-TIME WARNING] Forked
-    ## processing ('multicore') is not supported when running R from RStudio
-    ## because it is considered unstable. For more details, how to control
-    ## forked processing or not, and how to silence this warning in future R
-    ## sessions, see ?parallelly::supportsMulticore
+    ## Warning in supportsMulticoreAndRStudio(...): [ONE-TIME WARNING] Forked processing ('multicore') is
+    ## not supported when running R from RStudio because it is considered unstable. For more details, how
+    ## to control forked processing or not, and how to silence this warning in future R sessions, see ?
+    ## parallelly::supportsMulticore
 
 ``` r
 tic("simulate pi - parallel")
 sims_list <- future_map(draw_list, simulate_pi)
 ```
 
-    ## Warning: UNRELIABLE VALUE: Future ('<none>') unexpectedly generated
-    ## random numbers without specifying argument 'seed'. There is a risk that
-    ## those random numbers are not statistically sound and the overall results
-    ## might be invalid. To fix this, specify 'seed=TRUE'. This ensures that
-    ## proper, parallel-safe random numbers are produced via the L'Ecuyer-
-    ## CMRG method. To disable this check, use 'seed=NULL', or set option
-    ## 'future.rng.onMisuse' to "ignore".
+    ## Warning: UNRELIABLE VALUE: Future ('<none>') unexpectedly generated random numbers without specifying argument
+    ## 'seed'. There is a risk that those random numbers are not statistically sound and the overall results might be
+    ## invalid. To fix this, specify 'seed=TRUE'. This ensures that proper, parallel-safe random numbers are produced
+    ## via the L'Ecuyer-CMRG method. To disable this check, use 'seed=NULL', or set option 'future.rng.onMisuse' to
+    ## "ignore".
 
-    ## Warning: UNRELIABLE VALUE: Future ('<none>') unexpectedly generated
-    ## random numbers without specifying argument 'seed'. There is a risk that
-    ## those random numbers are not statistically sound and the overall results
-    ## might be invalid. To fix this, specify 'seed=TRUE'. This ensures that
-    ## proper, parallel-safe random numbers are produced via the L'Ecuyer-
-    ## CMRG method. To disable this check, use 'seed=NULL', or set option
-    ## 'future.rng.onMisuse' to "ignore".
+    ## Warning: UNRELIABLE VALUE: Future ('<none>') unexpectedly generated random numbers without specifying argument
+    ## 'seed'. There is a risk that those random numbers are not statistically sound and the overall results might be
+    ## invalid. To fix this, specify 'seed=TRUE'. This ensures that proper, parallel-safe random numbers are produced
+    ## via the L'Ecuyer-CMRG method. To disable this check, use 'seed=NULL', or set option 'future.rng.onMisuse' to
+    ## "ignore".
 
-    ## Warning: UNRELIABLE VALUE: Future ('<none>') unexpectedly generated
-    ## random numbers without specifying argument 'seed'. There is a risk that
-    ## those random numbers are not statistically sound and the overall results
-    ## might be invalid. To fix this, specify 'seed=TRUE'. This ensures that
-    ## proper, parallel-safe random numbers are produced via the L'Ecuyer-
-    ## CMRG method. To disable this check, use 'seed=NULL', or set option
-    ## 'future.rng.onMisuse' to "ignore".
+    ## Warning: UNRELIABLE VALUE: Future ('<none>') unexpectedly generated random numbers without specifying argument
+    ## 'seed'. There is a risk that those random numbers are not statistically sound and the overall results might be
+    ## invalid. To fix this, specify 'seed=TRUE'. This ensures that proper, parallel-safe random numbers are produced
+    ## via the L'Ecuyer-CMRG method. To disable this check, use 'seed=NULL', or set option 'future.rng.onMisuse' to
+    ## "ignore".
 
-    ## Warning: UNRELIABLE VALUE: Future ('<none>') unexpectedly generated
-    ## random numbers without specifying argument 'seed'. There is a risk that
-    ## those random numbers are not statistically sound and the overall results
-    ## might be invalid. To fix this, specify 'seed=TRUE'. This ensures that
-    ## proper, parallel-safe random numbers are produced via the L'Ecuyer-
-    ## CMRG method. To disable this check, use 'seed=NULL', or set option
-    ## 'future.rng.onMisuse' to "ignore".
+    ## Warning: UNRELIABLE VALUE: Future ('<none>') unexpectedly generated random numbers without specifying argument
+    ## 'seed'. There is a risk that those random numbers are not statistically sound and the overall results might be
+    ## invalid. To fix this, specify 'seed=TRUE'. This ensures that proper, parallel-safe random numbers are produced
+    ## via the L'Ecuyer-CMRG method. To disable this check, use 'seed=NULL', or set option 'future.rng.onMisuse' to
+    ## "ignore".
 
-    ## Warning: UNRELIABLE VALUE: Future ('<none>') unexpectedly generated
-    ## random numbers without specifying argument 'seed'. There is a risk that
-    ## those random numbers are not statistically sound and the overall results
-    ## might be invalid. To fix this, specify 'seed=TRUE'. This ensures that
-    ## proper, parallel-safe random numbers are produced via the L'Ecuyer-
-    ## CMRG method. To disable this check, use 'seed=NULL', or set option
-    ## 'future.rng.onMisuse' to "ignore".
+    ## Warning: UNRELIABLE VALUE: Future ('<none>') unexpectedly generated random numbers without specifying argument
+    ## 'seed'. There is a risk that those random numbers are not statistically sound and the overall results might be
+    ## invalid. To fix this, specify 'seed=TRUE'. This ensures that proper, parallel-safe random numbers are produced
+    ## via the L'Ecuyer-CMRG method. To disable this check, use 'seed=NULL', or set option 'future.rng.onMisuse' to
+    ## "ignore".
 
-    ## Warning: UNRELIABLE VALUE: Future ('<none>') unexpectedly generated
-    ## random numbers without specifying argument 'seed'. There is a risk that
-    ## those random numbers are not statistically sound and the overall results
-    ## might be invalid. To fix this, specify 'seed=TRUE'. This ensures that
-    ## proper, parallel-safe random numbers are produced via the L'Ecuyer-
-    ## CMRG method. To disable this check, use 'seed=NULL', or set option
-    ## 'future.rng.onMisuse' to "ignore".
+    ## Warning: UNRELIABLE VALUE: Future ('<none>') unexpectedly generated random numbers without specifying argument
+    ## 'seed'. There is a risk that those random numbers are not statistically sound and the overall results might be
+    ## invalid. To fix this, specify 'seed=TRUE'. This ensures that proper, parallel-safe random numbers are produced
+    ## via the L'Ecuyer-CMRG method. To disable this check, use 'seed=NULL', or set option 'future.rng.onMisuse' to
+    ## "ignore".
 
-    ## Warning: UNRELIABLE VALUE: Future ('<none>') unexpectedly generated
-    ## random numbers without specifying argument 'seed'. There is a risk that
-    ## those random numbers are not statistically sound and the overall results
-    ## might be invalid. To fix this, specify 'seed=TRUE'. This ensures that
-    ## proper, parallel-safe random numbers are produced via the L'Ecuyer-
-    ## CMRG method. To disable this check, use 'seed=NULL', or set option
-    ## 'future.rng.onMisuse' to "ignore".
+    ## Warning: UNRELIABLE VALUE: Future ('<none>') unexpectedly generated random numbers without specifying argument
+    ## 'seed'. There is a risk that those random numbers are not statistically sound and the overall results might be
+    ## invalid. To fix this, specify 'seed=TRUE'. This ensures that proper, parallel-safe random numbers are produced
+    ## via the L'Ecuyer-CMRG method. To disable this check, use 'seed=NULL', or set option 'future.rng.onMisuse' to
+    ## "ignore".
 
-    ## Warning: UNRELIABLE VALUE: Future ('<none>') unexpectedly generated
-    ## random numbers without specifying argument 'seed'. There is a risk that
-    ## those random numbers are not statistically sound and the overall results
-    ## might be invalid. To fix this, specify 'seed=TRUE'. This ensures that
-    ## proper, parallel-safe random numbers are produced via the L'Ecuyer-
-    ## CMRG method. To disable this check, use 'seed=NULL', or set option
-    ## 'future.rng.onMisuse' to "ignore".
+    ## Warning: UNRELIABLE VALUE: Future ('<none>') unexpectedly generated random numbers without specifying argument
+    ## 'seed'. There is a risk that those random numbers are not statistically sound and the overall results might be
+    ## invalid. To fix this, specify 'seed=TRUE'. This ensures that proper, parallel-safe random numbers are produced
+    ## via the L'Ecuyer-CMRG method. To disable this check, use 'seed=NULL', or set option 'future.rng.onMisuse' to
+    ## "ignore".
 
-    ## Warning: UNRELIABLE VALUE: Future ('<none>') unexpectedly generated
-    ## random numbers without specifying argument 'seed'. There is a risk that
-    ## those random numbers are not statistically sound and the overall results
-    ## might be invalid. To fix this, specify 'seed=TRUE'. This ensures that
-    ## proper, parallel-safe random numbers are produced via the L'Ecuyer-
-    ## CMRG method. To disable this check, use 'seed=NULL', or set option
-    ## 'future.rng.onMisuse' to "ignore".
+    ## Warning: UNRELIABLE VALUE: Future ('<none>') unexpectedly generated random numbers without specifying argument
+    ## 'seed'. There is a risk that those random numbers are not statistically sound and the overall results might be
+    ## invalid. To fix this, specify 'seed=TRUE'. This ensures that proper, parallel-safe random numbers are produced
+    ## via the L'Ecuyer-CMRG method. To disable this check, use 'seed=NULL', or set option 'future.rng.onMisuse' to
+    ## "ignore".
 
-    ## Warning: UNRELIABLE VALUE: Future ('<none>') unexpectedly generated
-    ## random numbers without specifying argument 'seed'. There is a risk that
-    ## those random numbers are not statistically sound and the overall results
-    ## might be invalid. To fix this, specify 'seed=TRUE'. This ensures that
-    ## proper, parallel-safe random numbers are produced via the L'Ecuyer-
-    ## CMRG method. To disable this check, use 'seed=NULL', or set option
-    ## 'future.rng.onMisuse' to "ignore".
+    ## Warning: UNRELIABLE VALUE: Future ('<none>') unexpectedly generated random numbers without specifying argument
+    ## 'seed'. There is a risk that those random numbers are not statistically sound and the overall results might be
+    ## invalid. To fix this, specify 'seed=TRUE'. This ensures that proper, parallel-safe random numbers are produced
+    ## via the L'Ecuyer-CMRG method. To disable this check, use 'seed=NULL', or set option 'future.rng.onMisuse' to
+    ## "ignore".
 
 ``` r
 toc()
 ```
 
-    ## simulate pi - parallel: 4.648 sec elapsed
+    ## simulate pi - parallel: 4.324 sec elapsed
 
 ``` r
 mean(unlist(sims_list))
 ```
 
-    ## [1] 3.141575
+    ## [1] 3.141571
 
 ## 12.22 원격에서 병렬로 R 실행하기
