@@ -1,15 +1,13 @@
 ---
 title: "note11"
-output: github_document
+output: html_notebook
 ---
-
 
 ```{r}
 library(tidyverse)
 library(broom)
 library(faraway)
 ```
-
 
 # 11 선형 회귀 및 분산 분석
 
@@ -110,7 +108,7 @@ load("./data/pred.rdata")
 ```{r}
 best_pred <-
   as_tibble(pred) %>%
-  select(-resp) |> 
+  select(-resp) |>
   map_dbl(cor, y = pred$resp) %>%
   sort(decreasing = TRUE) %>%
   .[1:4] %>%
